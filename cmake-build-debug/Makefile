@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-1-complexity-and-sort/3-compare-method.o: 1-complexity-and-sort/3-compare-method.cpp.o
-.PHONY : 1-complexity-and-sort/3-compare-method.o
+2-recursion/5-quick-sort.o: 2-recursion/5-quick-sort.cpp.o
+.PHONY : 2-recursion/5-quick-sort.o
 
 # target to build an object file
-1-complexity-and-sort/3-compare-method.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/3-compare-method.cpp.o
-.PHONY : 1-complexity-and-sort/3-compare-method.cpp.o
+2-recursion/5-quick-sort.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/2-recursion/5-quick-sort.cpp.o
+.PHONY : 2-recursion/5-quick-sort.cpp.o
 
-1-complexity-and-sort/3-compare-method.i: 1-complexity-and-sort/3-compare-method.cpp.i
-.PHONY : 1-complexity-and-sort/3-compare-method.i
+2-recursion/5-quick-sort.i: 2-recursion/5-quick-sort.cpp.i
+.PHONY : 2-recursion/5-quick-sort.i
 
 # target to preprocess a source file
-1-complexity-and-sort/3-compare-method.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/3-compare-method.cpp.i
-.PHONY : 1-complexity-and-sort/3-compare-method.cpp.i
+2-recursion/5-quick-sort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/2-recursion/5-quick-sort.cpp.i
+.PHONY : 2-recursion/5-quick-sort.cpp.i
 
-1-complexity-and-sort/3-compare-method.s: 1-complexity-and-sort/3-compare-method.cpp.s
-.PHONY : 1-complexity-and-sort/3-compare-method.s
+2-recursion/5-quick-sort.s: 2-recursion/5-quick-sort.cpp.s
+.PHONY : 2-recursion/5-quick-sort.s
 
 # target to generate assembly for a file
-1-complexity-and-sort/3-compare-method.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/3-compare-method.cpp.s
-.PHONY : 1-complexity-and-sort/3-compare-method.cpp.s
+2-recursion/5-quick-sort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/2-recursion/5-quick-sort.cpp.s
+.PHONY : 2-recursion/5-quick-sort.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 1-complexity-and-sort/3-compare-method.o"
-	@echo "... 1-complexity-and-sort/3-compare-method.i"
-	@echo "... 1-complexity-and-sort/3-compare-method.s"
+	@echo "... 2-recursion/5-quick-sort.o"
+	@echo "... 2-recursion/5-quick-sort.i"
+	@echo "... 2-recursion/5-quick-sort.s"
 .PHONY : help
 
 

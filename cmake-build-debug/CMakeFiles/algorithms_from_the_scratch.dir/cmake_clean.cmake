@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/3-compare-method.cpp.o"
-  "CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/3-compare-method.cpp.o.d"
+  "CMakeFiles/algorithms_from_the_scratch.dir/2-recursion/5-quick-sort.cpp.o"
+  "CMakeFiles/algorithms_from_the_scratch.dir/2-recursion/5-quick-sort.cpp.o.d"
   "algorithms_from_the_scratch"
   "algorithms_from_the_scratch.pdb"
 )

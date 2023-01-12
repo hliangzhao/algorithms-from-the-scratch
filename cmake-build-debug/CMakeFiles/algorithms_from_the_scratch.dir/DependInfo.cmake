@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/1-complexity-and-sort/3-compare-method.cpp" "CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/3-compare-method.cpp.o" "gcc" "CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/3-compare-method.cpp.o.d"
+  "/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/2-recursion/5-quick-sort.cpp" "CMakeFiles/algorithms_from_the_scratch.dir/2-recursion/5-quick-sort.cpp.o" "gcc" "CMakeFiles/algorithms_from_the_scratch.dir/2-recursion/5-quick-sort.cpp.o.d"
   )
 
 # Targets to which this target links.

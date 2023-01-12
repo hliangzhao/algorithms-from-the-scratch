@@ -3,4 +3,4 @@ project(algorithms_from_the_scratch)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(algorithms_from_the_scratch 1-complexity-and-sort/3-compare-method.cpp)
+add_executable(algorithms_from_the_scratch 2-recursion/5-quick-sort.cpp)
