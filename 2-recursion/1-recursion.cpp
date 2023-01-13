@@ -6,13 +6,13 @@
 using namespace std;
 
 /**
- * 主方法：T(N) = a*T(N/b) + O(N^d)
+ * 使用主方法估计递归算法的复杂度：T(N) = a*T(N/b) + O(N^d)
  * 若 log_b a < d: 结果为 O(N^d)
  * 若 log_b a > d: 结果为 O(N^{log_b a})
  * 若 log_b a == d: 结果为 O(N^d * log N)
  * */
 
-/*
+/**
  * 使用递归查找数组 arr[l...r] 中的最大值。
  * 这个过程是一个二叉树的后序遍历，结合入栈和出栈。
  * T(N) = 2 * T(N/2) + O(1)，进一步地，T(N) = 4 * T(N/4) = ... = 2^(log N) * T(1) = O(N)
@@ -62,14 +62,6 @@ void merge(int *arr, int l, int m, int r) {
     int i = 0;
     int p1 = l, p2 = m + 1;
     while (p1 <= m && p2 <= r) {
-//        if (arr[p1] <= arr[p2]) {
-//            tmp[i] = arr[p1];
-//            p1++;
-//        } else {
-//            tmp[i] = arr[p2];
-//            p2++;
-//        }
-//        i++;
         tmp[i++] = arr[p1] <= arr[p2] ? arr[p1++] : arr[p2++];
     }
     // add the left elements to the end of tmp

@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-2-recursion/5-quick-sort.o: 2-recursion/5-quick-sort.cpp.o
-.PHONY : 2-recursion/5-quick-sort.o
+0-cpp-essential/2-func-pointer.o: 0-cpp-essential/2-func-pointer.cpp.o
+.PHONY : 0-cpp-essential/2-func-pointer.o
 
 # target to build an object file
-2-recursion/5-quick-sort.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/2-recursion/5-quick-sort.cpp.o
-.PHONY : 2-recursion/5-quick-sort.cpp.o
+0-cpp-essential/2-func-pointer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/0-cpp-essential/2-func-pointer.cpp.o
+.PHONY : 0-cpp-essential/2-func-pointer.cpp.o
 
-2-recursion/5-quick-sort.i: 2-recursion/5-quick-sort.cpp.i
-.PHONY : 2-recursion/5-quick-sort.i
+0-cpp-essential/2-func-pointer.i: 0-cpp-essential/2-func-pointer.cpp.i
+.PHONY : 0-cpp-essential/2-func-pointer.i
 
 # target to preprocess a source file
-2-recursion/5-quick-sort.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/2-recursion/5-quick-sort.cpp.i
-.PHONY : 2-recursion/5-quick-sort.cpp.i
+0-cpp-essential/2-func-pointer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/0-cpp-essential/2-func-pointer.cpp.i
+.PHONY : 0-cpp-essential/2-func-pointer.cpp.i
 
-2-recursion/5-quick-sort.s: 2-recursion/5-quick-sort.cpp.s
-.PHONY : 2-recursion/5-quick-sort.s
+0-cpp-essential/2-func-pointer.s: 0-cpp-essential/2-func-pointer.cpp.s
+.PHONY : 0-cpp-essential/2-func-pointer.s
 
 # target to generate assembly for a file
-2-recursion/5-quick-sort.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/2-recursion/5-quick-sort.cpp.s
-.PHONY : 2-recursion/5-quick-sort.cpp.s
+0-cpp-essential/2-func-pointer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/0-cpp-essential/2-func-pointer.cpp.s
+.PHONY : 0-cpp-essential/2-func-pointer.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 2-recursion/5-quick-sort.o"
-	@echo "... 2-recursion/5-quick-sort.i"
-	@echo "... 2-recursion/5-quick-sort.s"
+	@echo "... 0-cpp-essential/2-func-pointer.o"
+	@echo "... 0-cpp-essential/2-func-pointer.i"
+	@echo "... 0-cpp-essential/2-func-pointer.s"
 .PHONY : help
 
 

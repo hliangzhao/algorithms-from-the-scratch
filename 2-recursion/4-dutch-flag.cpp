@@ -6,7 +6,7 @@
 using namespace std;
 
 /**
- * 问题：给定一个数组和一个数 num，要求把不大于 num 的数放在数组左边，大于 num 的数放在数组右边。
+ * 简单荷兰国旗问题：给定一个数组和一个数 num，要求把不大于 num 的数放在数组左边，大于 num 的数放在数组右边。
  * 要求时间复杂度 O(n)，额外空间复杂度 O(1)。
  * */
 
@@ -20,11 +20,11 @@ void proc(int *, int, int, int);
 
 void merge(int *, int, int, int, int);
 
-void solve(int *arr, int size, int target) {
+void solve1(int *arr, int size, int target) {
     if (arr == nullptr || size < 2) {
         return;
     }
-    proc(arr, 0, size - 1, target);
+    proc(arr, 0, size - 1, k);
 }
 
 void proc(int *arr, int l, int r, int target) {
@@ -65,7 +65,7 @@ void merge(int *arr, int l, int m, int r, int target) {
     }
 }
 
-/*
+/**
  * 方法二：使用双指针
  * */
 void solve2(int *arr, int size, int target) {
@@ -123,7 +123,7 @@ void flag(int *arr, int size, int target) {
     }
 }
 
-/*
+/**
  * 方法二：三指针的另一种使用方式。此时无需移动数组的子部分，完全通过交换即可。
  * |_<_|_____________________|___>___|
  *    i   k (to be decided)   j
@@ -147,7 +147,7 @@ void flag2(int *arr, int size, int target) {
             arr[j-1] = tmp;
             // update left bound of ">"
             j--;
-            // TODO: 本 if 下面执行 k++ 会出问题！因为这个元素所以刚交换过来的，还没有看过，因此此时 k 不应该自增
+            /// 本 if 下面执行 k++ 会出问题！因为这个元素所以刚交换过来的，还没有看过，因此此时 k 不应该自增
             continue;
         }
         k++;
@@ -155,19 +155,19 @@ void flag2(int *arr, int size, int target) {
 }
 
 int main() {
-//    int arr1_1[] = {6, 3, 2, -1, 5, 1, 8, -5};
-//    int target = 3;
-//    solve(arr1_1, 8, target);
-//    for (int i: arr1_1) {
-//        cout << i << " ";
-//    }
-//    cout << endl;
-//    int arr1_2[] = {6, 3, 2, -1, 5, 1, 8, -5};
-//    solve2(arr1_2, 8, target);
-//    for (int i: arr1_2) {
-//        cout << i << " ";
-//    }
-//    cout << endl;
+    int arr1_1[] = {6, 3, 2, -1, 5, 1, 8, -5};
+    int target = 3;
+    solve(arr1_1, 8, target);
+    for (int i: arr1_1) {
+        cout << i << " ";
+    }
+    cout << endl;
+    int arr1_2[] = {6, 3, 2, -1, 5, 1, 8, -5};
+    solve2(arr1_2, 8, target);
+    for (int i: arr1_2) {
+        cout << i << " ";
+    }
+    cout << endl;
 
     int arr2_1[] = {4, 3, 4, 6, -1, 45, 9, 90, 10, 2, 2, 3, 3};
     int target2 = 3;

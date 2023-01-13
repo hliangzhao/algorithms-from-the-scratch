@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/2-recursion/5-quick-sort.cpp" "CMakeFiles/algorithms_from_the_scratch.dir/2-recursion/5-quick-sort.cpp.o" "gcc" "CMakeFiles/algorithms_from_the_scratch.dir/2-recursion/5-quick-sort.cpp.o.d"
+  "/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/0-cpp-essential/2-func-pointer.cpp" "CMakeFiles/algorithms_from_the_scratch.dir/0-cpp-essential/2-func-pointer.cpp.o" "gcc" "CMakeFiles/algorithms_from_the_scratch.dir/0-cpp-essential/2-func-pointer.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -5,6 +5,9 @@
 
 using namespace std;
 
+/*
+ * 在有序数组中使用二分查找找到目标数字：遍历方法
+ * */
 void basic_find_num(const int *arr, int size, int target) {
     if (arr == nullptr) {
         exit(1);
@@ -22,9 +25,9 @@ void basic_find_num(const int *arr, int size, int target) {
     }
 }
 
-/*
+/**
  * 二分查找：在有序数组中使用二分查找找到目标数字。
- * O(log(n))
+ * 复杂度：O(log(n))
  * */
 void binary_search(const int *arr, int size, int target) {
     if (arr == nullptr) {
@@ -49,8 +52,8 @@ void binary_search(const int *arr, int size, int target) {
     }
 }
 
-/*
- * 使用二分查找在给定有序数组中查找元素值大于等于 target 的最小位置。
+/**
+ * 使用二分查找在给定有序数组中查找元素值 >=target 的最小位置。
  * */
 void binary_search_geq(const int *arr, int size, int target) {
     if (arr == nullptr) {
@@ -75,8 +78,8 @@ void binary_search_geq(const int *arr, int size, int target) {
     }
 }
 
-/*
- * 使用二分查找在给定有序数组中查找元素值小于等于 target 的最大位置。
+/**
+ * 使用二分查找在给定有序数组中查找元素值 <=target 的最大位置。
  * */
 void binary_search_leq(const int *arr, int size, int target) {
     if (arr == nullptr) {
@@ -102,10 +105,10 @@ void binary_search_leq(const int *arr, int size, int target) {
 }
 
 
-// 并非只有有序数组才能采用二分的思路。如下 ——
+/// 并非只有有序数组才能采用二分的思路。下面给出一些例子。
 
-/*
- * 二分查找问题：给定一个无序数组，该数组任意两个相邻数不相等。要求在小于 O(n) 的时间内找到一个局部最小值。
+/**
+ * 无序数组上的二分查找：给定一个无序数组，该数组任意两个相邻数不相等。要求在小于 O(n) 的时间内找到一个局部最小值。
  * 任意一个元素，若它比左右两边相邻的数都小，则它是一个局部最小。
  * 本题难点在于"罗尔定理"。这意味着，使用二分查找时，只要端点不满足，则两个子段中必然有一个子段内存在局部最小。
  * 要判断在哪个子段继续二分查找。

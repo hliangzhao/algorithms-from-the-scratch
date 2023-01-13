@@ -7,19 +7,21 @@
 
 using namespace std;
 
-/*
+/**
  * 编写所谓的「对数器」代码，对算法进行测试和检验。
  * */
 
-// 使用 C11 风格生成随机数
+/**
+ * 使用 C11 风格生成随机数。该写法需要记住！
+ * */
 int *generate_arr(int size, int max_val) {
-    // Without "mt" as the seed, the output of the for-loop in compare() will be the same!
+    /// Without "mt" as the seed, the output of the for-loop in compare() will be the same!
     ::random_device rd;
     ::mt19937 mt(rd());
     int *arr = new int[size];
-    uniform_int_distribution<int> dist(0, max_val);
+    uniform_int_distribution<int> rand_distribution(0, max_val);
     for (int i = 0; i < size; i++) {
-        arr[i] = dist(mt);
+        arr[i] = rand_distribution(mt);
     }
     return arr;
 }
