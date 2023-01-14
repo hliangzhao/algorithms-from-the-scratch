@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-0-cpp-essential/2-func-pointer.o: 0-cpp-essential/2-func-pointer.cpp.o
-.PHONY : 0-cpp-essential/2-func-pointer.o
+3-heap-and-bucket/4-bucket-sort.o: 3-heap-and-bucket/4-bucket-sort.cpp.o
+.PHONY : 3-heap-and-bucket/4-bucket-sort.o
 
 # target to build an object file
-0-cpp-essential/2-func-pointer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/0-cpp-essential/2-func-pointer.cpp.o
-.PHONY : 0-cpp-essential/2-func-pointer.cpp.o
+3-heap-and-bucket/4-bucket-sort.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/3-heap-and-bucket/4-bucket-sort.cpp.o
+.PHONY : 3-heap-and-bucket/4-bucket-sort.cpp.o
 
-0-cpp-essential/2-func-pointer.i: 0-cpp-essential/2-func-pointer.cpp.i
-.PHONY : 0-cpp-essential/2-func-pointer.i
+3-heap-and-bucket/4-bucket-sort.i: 3-heap-and-bucket/4-bucket-sort.cpp.i
+.PHONY : 3-heap-and-bucket/4-bucket-sort.i
 
 # target to preprocess a source file
-0-cpp-essential/2-func-pointer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/0-cpp-essential/2-func-pointer.cpp.i
-.PHONY : 0-cpp-essential/2-func-pointer.cpp.i
+3-heap-and-bucket/4-bucket-sort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/3-heap-and-bucket/4-bucket-sort.cpp.i
+.PHONY : 3-heap-and-bucket/4-bucket-sort.cpp.i
 
-0-cpp-essential/2-func-pointer.s: 0-cpp-essential/2-func-pointer.cpp.s
-.PHONY : 0-cpp-essential/2-func-pointer.s
+3-heap-and-bucket/4-bucket-sort.s: 3-heap-and-bucket/4-bucket-sort.cpp.s
+.PHONY : 3-heap-and-bucket/4-bucket-sort.s
 
 # target to generate assembly for a file
-0-cpp-essential/2-func-pointer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/0-cpp-essential/2-func-pointer.cpp.s
-.PHONY : 0-cpp-essential/2-func-pointer.cpp.s
+3-heap-and-bucket/4-bucket-sort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/3-heap-and-bucket/4-bucket-sort.cpp.s
+.PHONY : 3-heap-and-bucket/4-bucket-sort.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 0-cpp-essential/2-func-pointer.o"
-	@echo "... 0-cpp-essential/2-func-pointer.i"
-	@echo "... 0-cpp-essential/2-func-pointer.s"
+	@echo "... 3-heap-and-bucket/4-bucket-sort.o"
+	@echo "... 3-heap-and-bucket/4-bucket-sort.i"
+	@echo "... 3-heap-and-bucket/4-bucket-sort.s"
 .PHONY : help
 
 

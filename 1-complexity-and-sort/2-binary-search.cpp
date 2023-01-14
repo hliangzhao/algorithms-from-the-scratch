@@ -10,7 +10,7 @@ using namespace std;
  * */
 void basic_find_num(const int *arr, int size, int target) {
     if (arr == nullptr) {
-        exit(1);
+        return;
     }
     bool found = false;
     for (int i = 0; i < size; i++) {
@@ -31,7 +31,7 @@ void basic_find_num(const int *arr, int size, int target) {
  * */
 void binary_search(const int *arr, int size, int target) {
     if (arr == nullptr) {
-        ::exit(1);
+        return;
     }
     bool found = false;
     int begin = 0; int end = size - 1;
@@ -110,7 +110,7 @@ void binary_search_leq(const int *arr, int size, int target) {
 /**
  * 无序数组上的二分查找：给定一个无序数组，该数组任意两个相邻数不相等。要求在小于 O(n) 的时间内找到一个局部最小值。
  * 任意一个元素，若它比左右两边相邻的数都小，则它是一个局部最小。
- * 本题难点在于"罗尔定理"。这意味着，使用二分查找时，只要端点不满足，则两个子段中必然有一个子段内存在局部最小。
+ * 本题难点在于 "罗尔定理"。这意味着，使用二分查找时，只要端点不满足，则两个子段中必然有一个子段内存在局部最小。
  * 要判断在哪个子段继续二分查找。
  * */
 void find_local_min(const int *arr, int size) {

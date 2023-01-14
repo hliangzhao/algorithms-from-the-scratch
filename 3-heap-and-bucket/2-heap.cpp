@@ -67,7 +67,7 @@ void solve2(int *arr, int size, int k) {
     }
     /// 注意，默认是大顶堆！
 //    priority_queue<int> heap;
-    /// 使其是小顶堆，需要使用 greater 比较函数（大的排后面）！
+    /// 使其是小顶堆，需要使用 greater 比较函数（greater \to 后面的比前面的大 \to 升序排列 \to 小顶堆）！
     priority_queue<int, vector<int>, greater<int>> heap;
     int idx = 0;
     // 用前 k+1 个元素构造小根堆
@@ -158,19 +158,19 @@ void swap(int *arr, int i, int j) {
 }
 
 int main() {
-//    int arr1[] = {0, -1, 3, 1, 2, 4, 6, 5, 8, 9, 7};
-//    int *res = solve1(arr1, 11, 4);
-//    for (int i = 0; i < 11; i++) {
-//        cout << res[i] << " ";
-//    }
-//    cout << endl;
-//
-//    int arr2[] = {0, -1, 3, 1, 2, 4, 6, 5, 8, 9, 7};
-//    solve2(arr2, 11, 4);
-//    for (int v : arr2) {
-//        cout << v << " ";
-//    }
-//    cout << endl;
+    int arr1[] = {0, -1, 3, 1, 2, 4, 6, 5, 8, 9, 7};
+    int *res = solve1(arr1, 11, 4);
+    for (int i = 0; i < 11; i++) {
+        cout << res[i] << " ";
+    }
+    cout << endl;
+
+    int arr2[] = {0, -1, 3, 1, 2, 4, 6, 5, 8, 9, 7};
+    solve2(arr2, 11, 4);
+    for (int v : arr2) {
+        cout << v << " ";
+    }
+    cout << endl;
 
     test_pq();
 

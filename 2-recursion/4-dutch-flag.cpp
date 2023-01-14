@@ -24,7 +24,7 @@ void solve1(int *arr, int size, int target) {
     if (arr == nullptr || size < 2) {
         return;
     }
-    proc(arr, 0, size - 1, k);
+    proc(arr, 0, size - 1, target);
 }
 
 void proc(int *arr, int l, int r, int target) {
@@ -98,7 +98,7 @@ void solve2(int *arr, int size, int target) {
  * |_<_|___=___|___>___|____________|
  *    i       j         k undecided
  * */
-void flag(int *arr, int size, int target) {
+void flag1(int *arr, int size, int target) {
     int i = -1, j = -1, k = 0;
     while (k < size) {
         if (arr[k] < target) {
@@ -157,11 +157,12 @@ void flag2(int *arr, int size, int target) {
 int main() {
     int arr1_1[] = {6, 3, 2, -1, 5, 1, 8, -5};
     int target = 3;
-    solve(arr1_1, 8, target);
+    solve1(arr1_1, 8, target);
     for (int i: arr1_1) {
         cout << i << " ";
     }
     cout << endl;
+
     int arr1_2[] = {6, 3, 2, -1, 5, 1, 8, -5};
     solve2(arr1_2, 8, target);
     for (int i: arr1_2) {
@@ -171,11 +172,12 @@ int main() {
 
     int arr2_1[] = {4, 3, 4, 6, -1, 45, 9, 90, 10, 2, 2, 3, 3};
     int target2 = 3;
-    flag(arr2_1, 13, target2);
+    flag1(arr2_1, 13, target2);
     for (int i: arr2_1) {
         cout << i << " ";
     }
     cout << endl;
+
     int arr2_2[] = {4, 3, 4, 6, -1, 45, 9, 90, 10, 2, 2, 3, 3};
     flag2(arr2_2, 13, target2);
     for (int i: arr2_2) {

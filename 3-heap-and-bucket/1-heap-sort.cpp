@@ -65,7 +65,7 @@ void heap_sort(int *arr, int size) {
     if (arr == nullptr || size < 2) {
         return;
     }
-    // construct the big-root heap
+    /// 使用 v2 版本构造大根堆，速度更快
 //    get_big_root_heap_v1(arr, size); // O(n log n)
     get_big_root_heap_v2(arr, size); // o(n)
     int heap_size = size;

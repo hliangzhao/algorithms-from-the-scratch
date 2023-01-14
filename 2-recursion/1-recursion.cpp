@@ -22,6 +22,7 @@ int get_max_val(const int *arr, int l, int r) {
     if (l == r) {
         return arr[l];
     }
+    /// 使用下面这种写法计算中间位置！
     int mid = l + ((r - l) >> 1);
     // 如果数组长度很大，下面这种写法可能会溢出！
     // int mid = (l + r) / 2;
@@ -38,7 +39,7 @@ void merge(int *, int, int, int);
  * 归并排序：递归调用 proc 使左右半边各自有序，然后通过 merge 操作使得结果有序。
  * T(N) = 2 T(N/2) + O(N)
  * 带入主公式，得到归并排序的复杂度为 O(n*log(n))。
- * 优化了比较行为，但是额外空间复杂度为 O(n)
+ * 优化了比较行为，但是额外空间复杂度为 O(n)。
  * */
 void merge_sort(int *arr, int size) {
     if (arr == nullptr || size < 2) {

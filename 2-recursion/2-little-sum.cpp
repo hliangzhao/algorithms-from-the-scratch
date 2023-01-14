@@ -79,7 +79,7 @@ void merge1(int *cnt, const int *arr, int l, int m, int r) {
 }
 
 /**
- * 下面给出左老师的实现（有排序）
+ * 下面给出左老师的实现 —— 直接改造归并排序，因此数组是局部有序的，从而直接计算某些值（无需双重遍历）。
  * */
 
 int proc2(int *, int, int);

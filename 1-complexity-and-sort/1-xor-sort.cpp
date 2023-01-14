@@ -14,7 +14,7 @@ using namespace std;
  * a \leftarrow a^b = (a^b)^a = b^(a^a) = b^0 = b;
  * */
 void swap(int *arr, int i, int j) {
-    /// 注意，i \neq j，否则 arr[i] 会变成0
+    /// 注意，i \neq j，否则 arr[i] 会变成 0
     if (i == j) {
         return;
     }
@@ -54,6 +54,7 @@ void find_two_nums(const int *arr, int size) {
     // 至此，res 变为 a^b
     for (int i = 0; i < size; i++) {
         // a^b^a 或者 a^b^b 必然存在在数组中，遍历找到它们即可
+        /// 此处有问题，a^b^c 也仍然有可能在数组中！
         int tmp = res;
         tmp = tmp ^ arr[i];
         int found = false;
@@ -83,7 +84,8 @@ void find_two_nums_faster(const int *arr, int size) {
     }
     /// 至此，a_xor_b 变为 a^b，且 a_xor_b 必然不为 0（否则 a = b，a 出现了偶数次）
     /// 所以，a_xor_b 必然有一位是 1。a_xor_b 取反加 1，即得对应的补码。
-    /// 一个数和它的补码的和必然是 "111...1"，因此，最右的 1 可以通过该数和它的补码的与运算得到，因为对应位置必然都是 1。
+    /// 一个数和它的补码的和必然是 "10...0"（1 是进位），因此，最右的 1 可以通过该数和它的补码的与运算得到，因为对应位置必然都是 1。
+    /// 否则无法进位。
     /// 最终，right_one 是一个对应位置为 1，其余位置皆为 0 的变量。
     /// a 和 b，在这一位上必然是不同的。
     int right_one = a_xor_b & (~a_xor_b + 1);
@@ -165,7 +167,7 @@ void insert_sort(int *arr, int size) {
 //        }
 //        arr[j + 1] = tmp;
 
-        /// 方法二：边比较边移位
+        // 方法二：边比较边移位
         for (int j = i - 1; j >= 0 && arr[j] > arr[j+1]; j--) {
             swap(arr, j, j+1);
         }

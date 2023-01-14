@@ -12,7 +12,7 @@ using namespace std;
  * */
 
 /**
- * 使用 C11 风格生成随机数。该写法需要记住！
+ * 使用 C11 风格生成随机数。
  * */
 int *generate_arr(int size, int max_val) {
     /// Without "mt" as the seed, the output of the for-loop in compare() will be the same!
@@ -56,15 +56,6 @@ void compare() {
         select_sort(arr1, size);
         // use self-contained func
         ::sort(arr2, arr2 + size);
-
-//        for (int i = 0; i < size; i++) {
-//            cout << arr1[i] << " ";
-//        }
-//        cout << endl;
-//        for (int i = 0; i < size; i++) {
-//            cout << arr2[i] << " ";
-//        }
-//        cout << endl;
 
         // now we test
         for (int i = 0; i < size; i++) {
