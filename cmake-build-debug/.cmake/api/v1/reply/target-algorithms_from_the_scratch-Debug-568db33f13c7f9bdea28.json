@@ -94,7 +94,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "3-heap-and-bucket/4-bucket-sort.cpp",
+			"path" : "4-linked-list/3-doubly-linked-list.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

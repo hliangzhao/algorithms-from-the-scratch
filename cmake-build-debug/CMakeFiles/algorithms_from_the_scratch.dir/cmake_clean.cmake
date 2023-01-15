@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/algorithms_from_the_scratch.dir/3-heap-and-bucket/4-bucket-sort.cpp.o"
-  "CMakeFiles/algorithms_from_the_scratch.dir/3-heap-and-bucket/4-bucket-sort.cpp.o.d"
+  "CMakeFiles/algorithms_from_the_scratch.dir/4-linked-list/3-doubly-linked-list.cpp.o"
+  "CMakeFiles/algorithms_from_the_scratch.dir/4-linked-list/3-doubly-linked-list.cpp.o.d"
   "algorithms_from_the_scratch"
   "algorithms_from_the_scratch.pdb"
 )

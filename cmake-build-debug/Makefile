@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-3-heap-and-bucket/4-bucket-sort.o: 3-heap-and-bucket/4-bucket-sort.cpp.o
-.PHONY : 3-heap-and-bucket/4-bucket-sort.o
+4-linked-list/3-doubly-linked-list.o: 4-linked-list/3-doubly-linked-list.cpp.o
+.PHONY : 4-linked-list/3-doubly-linked-list.o
 
 # target to build an object file
-3-heap-and-bucket/4-bucket-sort.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/3-heap-and-bucket/4-bucket-sort.cpp.o
-.PHONY : 3-heap-and-bucket/4-bucket-sort.cpp.o
+4-linked-list/3-doubly-linked-list.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/4-linked-list/3-doubly-linked-list.cpp.o
+.PHONY : 4-linked-list/3-doubly-linked-list.cpp.o
 
-3-heap-and-bucket/4-bucket-sort.i: 3-heap-and-bucket/4-bucket-sort.cpp.i
-.PHONY : 3-heap-and-bucket/4-bucket-sort.i
+4-linked-list/3-doubly-linked-list.i: 4-linked-list/3-doubly-linked-list.cpp.i
+.PHONY : 4-linked-list/3-doubly-linked-list.i
 
 # target to preprocess a source file
-3-heap-and-bucket/4-bucket-sort.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/3-heap-and-bucket/4-bucket-sort.cpp.i
-.PHONY : 3-heap-and-bucket/4-bucket-sort.cpp.i
+4-linked-list/3-doubly-linked-list.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/4-linked-list/3-doubly-linked-list.cpp.i
+.PHONY : 4-linked-list/3-doubly-linked-list.cpp.i
 
-3-heap-and-bucket/4-bucket-sort.s: 3-heap-and-bucket/4-bucket-sort.cpp.s
-.PHONY : 3-heap-and-bucket/4-bucket-sort.s
+4-linked-list/3-doubly-linked-list.s: 4-linked-list/3-doubly-linked-list.cpp.s
+.PHONY : 4-linked-list/3-doubly-linked-list.s
 
 # target to generate assembly for a file
-3-heap-and-bucket/4-bucket-sort.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/3-heap-and-bucket/4-bucket-sort.cpp.s
-.PHONY : 3-heap-and-bucket/4-bucket-sort.cpp.s
+4-linked-list/3-doubly-linked-list.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/4-linked-list/3-doubly-linked-list.cpp.s
+.PHONY : 4-linked-list/3-doubly-linked-list.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 3-heap-and-bucket/4-bucket-sort.o"
-	@echo "... 3-heap-and-bucket/4-bucket-sort.i"
-	@echo "... 3-heap-and-bucket/4-bucket-sort.s"
+	@echo "... 4-linked-list/3-doubly-linked-list.o"
+	@echo "... 4-linked-list/3-doubly-linked-list.i"
+	@echo "... 4-linked-list/3-doubly-linked-list.s"
 .PHONY : help
 
 

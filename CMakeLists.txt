@@ -3,4 +3,4 @@ project(algorithms_from_the_scratch)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(algorithms_from_the_scratch 3-heap-and-bucket/4-bucket-sort.cpp)
+add_executable(algorithms_from_the_scratch 4-linked-list/3-doubly-linked-list.cpp)

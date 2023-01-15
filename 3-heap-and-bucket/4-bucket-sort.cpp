@@ -233,7 +233,8 @@ int get_digit(int num, int d) {
 int main() {
     cout << get_digit(1235621, 12) << endl;
 
-    int arr_0[] = {17, 13, 25, 100, 72, 6, 8, 90, 99, 23, 45, 12, 34, 5, 6, 23};
+    int arr_0[] = {17, 13, 25, 100, 72, 6, 8, 90,
+                   99, 23, 45, 12, 34, 5, 6, 23};
     basic_radix_sort(arr_0, 16);
     for (int i: arr_0) {
         cout << i << " ";
