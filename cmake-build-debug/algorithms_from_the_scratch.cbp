@@ -80,7 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/4-linked-list/3-doubly-linked-list.cpp">
+		<Unit filename="/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/4-linked-list/2-linked-list.cpp">
 			<Option target="algorithms_from_the_scratch"/>
 		</Unit>
 		<Unit filename="/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/CMakeLists.txt">
