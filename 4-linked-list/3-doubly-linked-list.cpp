@@ -11,14 +11,23 @@ struct DoublyLinkedNode {
 };
 
 DoublyLinkedNode *create_dllist(const int *arr, int size);
+
 void print(DoublyLinkedNode *dllist);
+
 void reverse_print(DoublyLinkedNode *dllist);
+
 int get_dllist_node(DoublyLinkedNode *dllist, int index);
+
 void update_dllist(DoublyLinkedNode *dllist, int index, int value);
+
 void add_to_dllist(DoublyLinkedNode *dllist, int index, int value);
+
 void delete_from_dllist(DoublyLinkedNode *dllist, int index);
+
 void delete_dllist(DoublyLinkedNode *dllist);
+
 DoublyLinkedNode *reverse_dllist(DoublyLinkedNode *dllist);
+
 DoublyLinkedNode *reverse_dllist_faster(DoublyLinkedNode *dllist);
 
 /**
@@ -285,36 +294,36 @@ int main() {
     int arr[] = {4, 10, 23, 4, 56, 7, 78, 12, 89, 100};
     DoublyLinkedNode *dllist = create_dllist(arr, 10);
     print(dllist);
-//    reverse_print(dllist);
-//
-//    cout << get_dllist_node(dllist, 0) << endl;
-//    cout << get_dllist_node(dllist, 5) << endl;
-//    cout << get_dllist_node(dllist, 9) << endl;
-//    cout << get_dllist_node(dllist, -1) << endl;
-//    cout << get_dllist_node(dllist, 10) << endl;
-//
-//    update_dllist(dllist, 0, -100);
-//    update_dllist(dllist, 9, 100);
-//    update_dllist(dllist, -1, -100);
-//    update_dllist(dllist, 10, 100);
-//    print(dllist);
-//
-//    add_to_dllist(dllist, 0, 100);
-//    add_to_dllist(dllist, 9, 1000);
-//    add_to_dllist(dllist, 10, 10000);
-//    print(dllist);
-//
-//
-//    delete_from_dllist(dllist, 0);
-//    delete_from_dllist(dllist, -1);
-//    delete_from_dllist(dllist, 5);
-//    delete_from_dllist(dllist, 9);
-//    delete_from_dllist(dllist, 10);
-//    print(dllist);
-//
-//    delete_dllist(dllist);
+    reverse_print(dllist);
 
-//    reverse_dllist(dllist);
+    cout << get_dllist_node(dllist, 0) << endl;
+    cout << get_dllist_node(dllist, 5) << endl;
+    cout << get_dllist_node(dllist, 9) << endl;
+    cout << get_dllist_node(dllist, -1) << endl;
+    cout << get_dllist_node(dllist, 10) << endl;
+
+    update_dllist(dllist, 0, -100);
+    update_dllist(dllist, 9, 100);
+    update_dllist(dllist, -1, -100);
+    update_dllist(dllist, 10, 100);
+    print(dllist);
+
+    add_to_dllist(dllist, 0, 100);
+    add_to_dllist(dllist, 9, 1000);
+    add_to_dllist(dllist, 10, 10000);
+    print(dllist);
+
+
+    delete_from_dllist(dllist, 0);
+    delete_from_dllist(dllist, -1);
+    delete_from_dllist(dllist, 5);
+    delete_from_dllist(dllist, 9);
+    delete_from_dllist(dllist, 10);
+    print(dllist);
+
+    delete_dllist(dllist);
+
+    reverse_dllist(dllist);
     DoublyLinkedNode *r = reverse_dllist_faster(dllist);
     print(r);
 

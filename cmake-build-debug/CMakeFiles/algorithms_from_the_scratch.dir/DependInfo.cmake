@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/4-linked-list/2-linked-list.cpp" "CMakeFiles/algorithms_from_the_scratch.dir/4-linked-list/2-linked-list.cpp.o" "gcc" "CMakeFiles/algorithms_from_the_scratch.dir/4-linked-list/2-linked-list.cpp.o.d"
+  "/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/5-tree/1-binary-tree.cpp" "CMakeFiles/algorithms_from_the_scratch.dir/5-tree/1-binary-tree.cpp.o" "gcc" "CMakeFiles/algorithms_from_the_scratch.dir/5-tree/1-binary-tree.cpp.o.d"
   )
 
 # Targets to which this target links.
