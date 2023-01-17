@@ -228,4 +228,5 @@ CMakeFiles/algorithms_from_the_scratch.dir/4-linked-list/2-linked-list.cpp.o: \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/map \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__tree \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__node_handle \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/optional
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/optional \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/set

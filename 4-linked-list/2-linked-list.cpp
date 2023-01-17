@@ -4,6 +4,7 @@
 #include <iostream>
 #include <stack>
 #include <map>
+#include <set>
 
 using namespace std;
 
@@ -13,9 +14,12 @@ using namespace std;
  * 2、打印有序链表的公共部分；
  * 3、面试时，尽量找到空间最省的方，否则考察不到算法。技巧：额外数据结构记录（哈希表等）、快慢指针；
  * 4、判断单链表是否为回文链表的三个方法；
- * 5、将单链表划分为 <=、==、>= 三个区间的两个方法；
- * 6、拷贝含有随机指针的链表。
+ * 5、将单链表划分为 <、==、> 三个区间的两个方法；
+ * 6、拷贝含有随机指针的链表的三个方法；
+ * 7、判断链表是否有环的两个方法；
+ * 8、单链表相交问题。
  * */
+
 
 struct LinkedNode {
     int value;
@@ -46,9 +50,15 @@ bool palindrome2(LinkedNode *l);
 
 bool palindrome3(LinkedNode *l);
 
-void divide_region1(LinkedNode *l, int pivot);
+void divide_region(LinkedNode *l, int pivot);
 
-void divide_region2(LinkedNode *l, int pivot);
+void divide_region_better(LinkedNode *l, int pivot);
+
+LinkedNode *has_circle(LinkedNode *l);
+
+LinkedNode *has_circle_better(LinkedNode *l);
+
+LinkedNode *intersect(LinkedNode *l1, LinkedNode *l2);
 
 /**
  * 链表的创建
@@ -269,7 +279,7 @@ void print_common_part(LinkedNode *l1, LinkedNode *l2) {
 
 /**
  * 判断给定链表是否为回文链表。
- * 基本方法：借助助栈手动构造一个链表逆序，然后依次对比即可。
+ * 基本方法：借助栈手动构造一个链表逆序，然后依次对比即可。
  * 额外空间复杂度：O(n)
  * */
 bool palindrome(LinkedNode *l) {
@@ -383,7 +393,7 @@ bool palindrome3(LinkedNode *l) {
  * */
 const int MAX_SIZE = 200;
 
-void divide_region1(LinkedNode *l, int pivot) {
+void divide_region(LinkedNode *l, int pivot) {
     LinkedNode *p = l->next;
     if (!p->next) {
         return;
@@ -426,7 +436,7 @@ void divide_region1(LinkedNode *l, int pivot) {
  * 将单链表按照 <=、==、>= 给定值 pivot 进行划分。
  * 更好的方法：额外空间复杂度为 O(1)，且能保持节点的相对次序不变
  * */
-void divide_region2(LinkedNode *l, int pivot) {
+void divide_region_better(LinkedNode *l, int pivot) {
     LinkedNode *lh = nullptr, *lt = nullptr, *eh = nullptr, *et = nullptr, *gh = nullptr, *gt = nullptr;
     LinkedNode *p = l->next;
     if (!p) {
@@ -494,6 +504,10 @@ void divide_region2(LinkedNode *l, int pivot) {
     }
 }
 
+//////////////////////////////////////////////////////////////////////////////
+/// 下面是进阶题目
+//////////////////////////////////////////////////////////////////////////////
+
 /**
  * 给定一个含有随机指针节点的链表的头节点，完成这个链表的复制并返回新链表的头节点。
  * 要求：时 O(n)，额空 O(1)
@@ -509,7 +523,7 @@ NodeWithRandPtr *copy_rand_list(NodeWithRandPtr *l);
 
 NodeWithRandPtr *copy_rand_list2(NodeWithRandPtr *l);
 
-NodeWithRandPtr *copy_rand_list3(NodeWithRandPtr *l);
+NodeWithRandPtr *copy_rand_list_best(NodeWithRandPtr *l);
 
 void print(NodeWithRandPtr *l) {
     NodeWithRandPtr *p = l->next;
@@ -587,16 +601,16 @@ NodeWithRandPtr *copy_rand_list2(NodeWithRandPtr *l) {
         q = p->next;
         p = p->next->next;
     }
-    return  new_l;
+    return new_l;
 }
 
 /**
  * 方法（better）：将每个节点对应的新节点放在本节点后面
  * 1 --> 1' --> 2 --> 2' --> 3 --> 3' --> null
  * 额空为 O(1)
- * 保持原链表的结构不变的写法。
+ * 和上面的方法相比没有显著区别，但是这是保持原链表的结构不变的写法。
  * */
-NodeWithRandPtr *copy_rand_list3(NodeWithRandPtr *l) {
+NodeWithRandPtr *copy_rand_list_best(NodeWithRandPtr *l) {
     NodeWithRandPtr *p = l->next, *q;
     while (p) {
         q = new NodeWithRandPtr;
@@ -634,7 +648,158 @@ NodeWithRandPtr *copy_rand_list3(NodeWithRandPtr *l) {
     }
     p->next = m;
 
-    return  new_l;
+    return new_l;
+}
+
+/**
+ * 判断链表是否有环。如果有，返回第一个入环的节点。
+ * 方法一：借助 set，额外 O(n)
+ * */
+LinkedNode *has_circle(LinkedNode *l) {
+    set<LinkedNode *> s;
+    LinkedNode *p = l->next;
+    while (p) {
+        set<LinkedNode *>::iterator it = s.find(p);
+        if (it != s.end()) {
+            return p;
+        } else {
+            s.insert(p);
+        }
+        p = p->next;
+    }
+    return nullptr;
+}
+
+/**
+ * 判断链表是否有环。如果有，返回第一个入环的节点。
+ * 方法二：O(1)
+ * 核心思想：入环的这个节点是走不出来的，一个类似于"6"或者"9"的结构。
+ * 因此，借助快慢指针，只要有环，二者一定会在某个节点相遇；若无环，则快节点必然抵达 null。
+ * */
+LinkedNode *has_circle_better(LinkedNode *l) {
+    LinkedNode *f = l->next, *s = l->next;
+    if (!f->next) {
+        // 单节点链表必然无环
+        return nullptr;
+    }
+    while (true) {
+        /// 只要是快慢指针，基本就是采用 "f && f->next" 判断是否到尾部
+        if (f && f->next) {
+            f = f->next->next;
+            s = s->next;
+        } else {
+            return nullptr;
+        }
+        if (f == s) {
+            /// 注意，只要有环，则最多两圈，二者就可以相遇
+            /// 重置快指针，二者一定在第一个入环节点处相遇
+            f = l->next;
+            while (f != s) {
+                f = f->next;
+                s = s->next;
+            }
+            break;
+        }
+    }
+    return f;
+}
+
+/**
+ * 单链表相交问题：给定两个可能有环的单链表的头节点。如果两个链表相交，返回相交的第一个节点；如果不相交，返回 null。
+ * 要求：时 O(n)，额空 O(1)
+ *
+ * 首先需要依次判断两个链表是否有环路。
+ * （1）二者均无环：遍历二者，记录二者的长度。如果二者尾节点地址不同，则不相交；
+ *      若相交，则长的先走 gap 步，然后二者一起走，第一个地址相同的节点就是我们要的。
+ * （2）若一个有环，一个无环：则二者必然不相交。
+ * （3）若两个都有环，记录两个入环节点的位置。
+ *      若位置相同，则相交。此时和第一步中的子步骤一样 ——
+ *          将入环节点作为二者的新终点，统计二者的长度，长的先走 gap 步，然后二者一起走，第一个地址相同的节点就是我们要的。
+ *      若位置不同，则必然不相交。
+ * */
+LinkedNode *intersect(LinkedNode *l1, LinkedNode *l2) {
+    // TODO：构造实例测试本函数
+    if (!l1->next || !l2->next) {
+        // 至少有一个是空链表，必然无交点
+        return nullptr;
+    }
+
+    LinkedNode *c1 = has_circle_better(l1), *c2 = has_circle_better(l2);
+
+    if (!c1 && !c2) { /// 二者均无环
+        LinkedNode *p = l1->next, *q = l2->next;
+        int gap = 0;
+        while (p->next) {
+            gap++;
+            p = p->next;
+        }
+        while (q->next) {
+            gap--;
+            q = q->next;
+        }
+
+        if (p != q) { /// 终点不同，则二者不相交
+            return nullptr;
+        } else { /// 终点相同，则二者相交，找到第一个交点
+            // p 指向长链表的首节点，q 指向另一个的
+            p = gap > 0 ? l1->next : l2->next;
+            q = p == l1->next ? l2->next : l1->next;
+            gap = ::abs(gap);
+            // 长链表先走 gap 步
+            while (gap != 0) {
+                gap--;
+                p = p->next;
+            }
+            // 现在二者一起走，必然会在一个地方抵达同一个点，这个第一个相同点就是我们要的
+            while (p != q) {
+                p = p->next;
+                q = q->next;
+            }
+            return p;
+        }
+    } else if (c1 && c2) { /// 二者均有环
+        if (c1 == c2) { /// 入环节点相同，二者必然相交。将入环节点作为二者的新终点，重复上面的步骤。
+            LinkedNode *p = l1->next, *q = l2->next;
+            int gap = 0;
+            while (p != c1) {
+                gap++;
+                p = p->next;
+            }
+            while (q != c2) {
+                gap--;
+                q = q->next;
+            }
+            p = gap > 0 ? l1->next : l2->next;
+            q = p == l1->next ? l2->next : l1->next;
+            gap = ::abs(gap);
+            while (gap != 0) {
+                gap--;
+                p = p->next;
+            }
+            while (p != q) {
+                p = p->next;
+                q = q->next;
+            }
+            return p;
+        } else { /// 入环节点不同，二者可能相交，也可能不相交
+            /// 相交：  \ /
+            ///         O
+            /// 不相交：_O _O
+            /// 如何区分？此时，让其中一个链条的入环节点继续往下走，在回到本节点之前，若能遇到第二个链表的入环节点，则二者相交。
+            /// 此时任意一个相交的节点均满足要求，可以返回。
+            /// 否则二者不相交。
+            LinkedNode *p = c1->next;
+            while (p != c1) {
+                if (p == c2) {
+                    return c1;
+                }
+                p = p->next;
+            }
+            return nullptr;
+        }
+    } else { /// 一个有环，一个无环，二者必然不相交
+        return nullptr;
+    }
 }
 
 int main() {
@@ -683,8 +848,8 @@ int main() {
     cout << palindrome2(l3) << endl;
     cout << palindrome3(l3) << endl;
 
-    divide_region1(linked_list, 10);
-    divide_region2(linked_list, 10);
+    divide_region(linked_list, 10);
+    divide_region_better(linked_list, 10);
     print(linked_list);
 
     NodeWithRandPtr *n0 = new NodeWithRandPtr;
@@ -710,7 +875,17 @@ int main() {
     n4->rand = n3;
     n5->rand = n4;
     print(n0);
-    NodeWithRandPtr *new_list = copy_rand_list3(n0);
+    NodeWithRandPtr *new_list = copy_rand_list_best(n0);
     print(new_list);
     print(n0);
+
+    int arr4[] = {1, 2, 3, 4, 5};
+    LinkedNode *l4 = create_llist(arr4, 5);
+    l4->next->next->next->next->next->next = l4->next->next->next;
+    LinkedNode *res = has_circle_better(l4);
+    if (res) {
+        cout << res->value << endl;
+    } else {
+        cout << "nullptr" << endl;
+    }
 }
