@@ -232,15 +232,8 @@ CMakeFiles/algorithms_from_the_scratch.dir/5-tree/1-binary-tree.cpp.o: /Users/hl
   /Library/Developer/CommandLineTools/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/__tree \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/__node_handle \
-  /Library/Developer/CommandLineTools/usr/include/c++/v1/optional \
-  /Library/Developer/CommandLineTools/usr/include/c++/v1/cmath \
-  /Library/Developer/CommandLineTools/usr/include/c++/v1/math.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/math.h
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/optional
 
-
-/Library/Developer/CommandLineTools/usr/include/c++/v1/math.h:
-
-/Library/Developer/CommandLineTools/usr/include/c++/v1/cmath:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/optional:
 
@@ -525,8 +518,6 @@ CMakeFiles/algorithms_from_the_scratch.dir/5-tree/1-binary-tree.cpp.o: /Users/hl
 /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/errno.h:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/__string:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/math.h:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/bit:
 

@@ -1,5 +1,5 @@
-CMakeFiles/algorithms_from_the_scratch.dir/5-tree/1-binary-tree.cpp.o: \
-  /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/5-tree/1-binary-tree.cpp \
+CMakeFiles/algorithms_from_the_scratch.dir/test.cpp.o: \
+  /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/test.cpp \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/pthread.h \
@@ -222,12 +222,7 @@ CMakeFiles/algorithms_from_the_scratch.dir/5-tree/1-binary-tree.cpp.o: \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/bitset \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__bit_reference \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/stack \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/queue \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/deque \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__split_buffer \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/queue \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/vector \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/map \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__tree \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__node_handle \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/optional
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/vector
