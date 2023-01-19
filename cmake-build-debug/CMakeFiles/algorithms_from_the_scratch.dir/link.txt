@@ -1,1 +1,1 @@
-/usr/bin/clang++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/algorithms_from_the_scratch.dir/5-tree/1-binary-tree.cpp.o" -o algorithms_from_the_scratch 
+/usr/bin/clang++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o" -o algorithms_from_the_scratch 

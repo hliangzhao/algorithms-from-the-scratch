@@ -1239,132 +1239,132 @@ void print_crease_better_proc(int i, int n, bool down) {
 }
 
 int main() {
-//    int arr1[] = {5, 4, 8, 11, 0, 13, 4, 7, 2, 0, 0, 5, 1};
-//    Tree tree1_1 = create_from_arr_recur(arr1, 13);
-//    print_tree(tree1_1);
-//
-//    cout << get_leaf_num(tree1_1) << endl;
-//    cout << get_node_num(tree1_1) << endl;
-//    cout << get_level_node_num(tree1_1, 1) << " "
-//         << get_level_node_num(tree1_1, 2) << " "
-//         << get_level_node_num(tree1_1, 3) << " "
-//         << get_level_node_num(tree1_1, 4) << " "
-//         << get_level_node_num(tree1_1, 5) << " "
-//         << get_level_node_num(tree1_1, 6) << endl;
-//    delete_tree(tree1_1);
-//
-//    Tree tree1_2 = create_from_arr(arr1, 13);
-//    print_tree(tree1_2);
-//    delete_tree(tree1_2);
-//
-//    int arr2_1[] = {1, 5, 11, 12, 0, 3, 0, 0, 6, 0, 0, 0, 0};
-//    Tree tree2_1 = create_from_lot(arr2_1, 13);
-//    print_tree(tree2_1);
-//    pre_order_recur(tree2_1);
-//    cout << endl;
-//
-//    int arr2_2[] = {1, 2, 3, 0, 0, 4, 0, 0, 5};
-//    Tree tree2_2 = create_from_lot(arr2_2, 9);
-//    print_tree(tree2_2);
-//    pre_order_recur(tree2_2);
-//    cout << endl;
-//
-//    Node<int> * tree2_3 = create_from_lot_input();
-//    print_tree(tree2_3);
-//    pre_order_recur(tree2_3);
-//    cout << endl;
-//
-//    Tree tree3 = new_node(1);
-//    tree3->left = new_node(2);
-//    tree3->right = new_node(5);
-//    tree3->left->left = new_node(3);
-//    tree3->right->left = new_node(6);
-//    tree3->right->right = new_node(9);
-//    tree3->right->left->left = new_node(7);
-//    tree3->right->left->right = new_node(8);
-//    tree3->right->left->right->right = new_node(4);
-//    print_tree(tree3);
-//    cout << get_max_width_better(tree3) << endl;
-//
-//    cout << "Pre: " << endl;
-//    pre_order_recur(tree3);
-//    cout << endl;
-//    pre_order_traverse(tree3);
-//    cout << endl;
-//
-//    cout << "In: " << endl;
-//    in_order_recur(tree3);
-//    cout << endl;
-//    in_order_traverse(tree3);
-//    cout << endl;
-//    in_order_traverse_compact(tree3);
-//    cout << endl;
-//
-//    cout << "Post: " << endl;
-//    post_order_recur(tree3);
-//    cout << endl;
-//    post_order_traverse(tree3);
-//    cout << endl;
-//
-//    print_tree(tree3);
-//
-//    bfs(tree3);
-//    cout << endl;
-//
-//    int arr3[] = {5, 4, 8, 11, 0, 13, 4, 7, 2, 0, 0, 5, 1, 6, 20};
-//    Tree tree4 = create_from_arr_recur(arr3, 15);
-//    print_tree(tree4);
-//    cout << cbt(tree4) << endl;
-//    cout << bbt(tree4) << endl;
-//    cout << bbt_better(tree4) << endl;
-//    cout << get_max_width_better(tree4) << endl;
-//    cout << get_max_width(tree4) << endl;
-//
-//    int arr4[] = {5, 3, 7, 2, 4, 6, 8, 1, 0, 0, 0, 0, 0, 0, 0};
-//    Tree tree5 = create_from_lot(arr4, 15);
-//    print_tree(tree5);
-//
-//    cout << bst_basic(tree5) << endl;
-//    cout << bst_recur(tree5) << endl;
-//    cout << bst_traverse(tree5) << endl;
-//    cout << bst_recur_better(tree5) << endl;
-//    cout << fbt(tree5) << endl;
-//
-//    cout << find_lowest_ancestor(tree5, tree5->left->left->left, tree5->right->left)->data << endl;
-//    cout << find_lowest_ancestor_recur(tree5, tree5->left->left->left, tree5->right->left)->data << endl;
-//
-//    int arr5[] = {5, 3, 7, 2, 4, 6, 8, 1, 0, 0, 0, 0, 0, 0, 0};
-//    Tree tree6 = create_from_lot(arr5, 15);
-//    print_tree(tree6);
-//    cout << cbt(tree6) << endl;
-//    cout << bbt(tree6) << endl;
-//    cout << bbt_better(tree6) << endl;
-//
-//    NodeWithParent *tree7 = new_nwp(5);
-//    tree7->left = new_nwp(3);
-//    tree7->right = new_nwp(7);
-//    tree7->parent = nullptr;
-//    tree7->left->left = new_nwp(2);
-//    tree7->left->right = new_nwp(4);
-//    tree7->left->parent = new_nwp(5);
-//    tree7->right->left = new_nwp(6);
-//    tree7->right->right = new_nwp(8);
-//    tree7->right->parent = new_nwp(5);
-//    tree7->left->left->parent = tree7->left;
-//    tree7->left->right->parent = tree7->left;
-//    tree7->right->left->parent = tree7->right;
-//    tree7->right->right->parent = tree7->right;
-//
-//    cout << find_next(tree7, tree7)->value << endl;
-//    cout << find_next_recur(tree7)->value << endl;
-//
-//    int arr6[] = {5, 3, 7, 2, 4, 6, 8, 1, 0, 0, 0, 0, 0, 0, 0};
-//    Tree tree8 = create_from_lot(arr6, 15);
-//    print_tree(tree8);
-//    string s = serialize_by_pre(tree8);
-//    cout << s << endl;
-//    Tree tree8_rec = reconstruct_from_pre(s);
-//    print_tree(tree8_rec);
+    int arr1[] = {5, 4, 8, 11, 0, 13, 4, 7, 2, 0, 0, 5, 1};
+    Tree tree1_1 = create_from_arr_recur(arr1, 13);
+    print_tree(tree1_1);
+
+    cout << get_leaf_num(tree1_1) << endl;
+    cout << get_node_num(tree1_1) << endl;
+    cout << get_level_node_num(tree1_1, 1) << " "
+         << get_level_node_num(tree1_1, 2) << " "
+         << get_level_node_num(tree1_1, 3) << " "
+         << get_level_node_num(tree1_1, 4) << " "
+         << get_level_node_num(tree1_1, 5) << " "
+         << get_level_node_num(tree1_1, 6) << endl;
+    delete_tree(tree1_1);
+
+    Tree tree1_2 = create_from_arr(arr1, 13);
+    print_tree(tree1_2);
+    delete_tree(tree1_2);
+
+    int arr2_1[] = {1, 5, 11, 12, 0, 3, 0, 0, 6, 0, 0, 0, 0};
+    Tree tree2_1 = create_from_lot(arr2_1, 13);
+    print_tree(tree2_1);
+    pre_order_recur(tree2_1);
+    cout << endl;
+
+    int arr2_2[] = {1, 2, 3, 0, 0, 4, 0, 0, 5};
+    Tree tree2_2 = create_from_lot(arr2_2, 9);
+    print_tree(tree2_2);
+    pre_order_recur(tree2_2);
+    cout << endl;
+
+    Node<int> * tree2_3 = create_from_lot_input();
+    print_tree(tree2_3);
+    pre_order_recur(tree2_3);
+    cout << endl;
+
+    Tree tree3 = new_node(1);
+    tree3->left = new_node(2);
+    tree3->right = new_node(5);
+    tree3->left->left = new_node(3);
+    tree3->right->left = new_node(6);
+    tree3->right->right = new_node(9);
+    tree3->right->left->left = new_node(7);
+    tree3->right->left->right = new_node(8);
+    tree3->right->left->right->right = new_node(4);
+    print_tree(tree3);
+    cout << get_max_width_better(tree3) << endl;
+
+    cout << "Pre: " << endl;
+    pre_order_recur(tree3);
+    cout << endl;
+    pre_order_traverse(tree3);
+    cout << endl;
+
+    cout << "In: " << endl;
+    in_order_recur(tree3);
+    cout << endl;
+    in_order_traverse(tree3);
+    cout << endl;
+    in_order_traverse_compact(tree3);
+    cout << endl;
+
+    cout << "Post: " << endl;
+    post_order_recur(tree3);
+    cout << endl;
+    post_order_traverse(tree3);
+    cout << endl;
+
+    print_tree(tree3);
+
+    bfs(tree3);
+    cout << endl;
+
+    int arr3[] = {5, 4, 8, 11, 0, 13, 4, 7, 2, 0, 0, 5, 1, 6, 20};
+    Tree tree4 = create_from_arr_recur(arr3, 15);
+    print_tree(tree4);
+    cout << cbt(tree4) << endl;
+    cout << bbt(tree4) << endl;
+    cout << bbt_better(tree4) << endl;
+    cout << get_max_width_better(tree4) << endl;
+    cout << get_max_width(tree4) << endl;
+
+    int arr4[] = {5, 3, 7, 2, 4, 6, 8, 1, 0, 0, 0, 0, 0, 0, 0};
+    Tree tree5 = create_from_lot(arr4, 15);
+    print_tree(tree5);
+
+    cout << bst_basic(tree5) << endl;
+    cout << bst_recur(tree5) << endl;
+    cout << bst_traverse(tree5) << endl;
+    cout << bst_recur_better(tree5) << endl;
+    cout << fbt(tree5) << endl;
+
+    cout << find_lowest_ancestor(tree5, tree5->left->left->left, tree5->right->left)->data << endl;
+    cout << find_lowest_ancestor_recur(tree5, tree5->left->left->left, tree5->right->left)->data << endl;
+
+    int arr5[] = {5, 3, 7, 2, 4, 6, 8, 1, 0, 0, 0, 0, 0, 0, 0};
+    Tree tree6 = create_from_lot(arr5, 15);
+    print_tree(tree6);
+    cout << cbt(tree6) << endl;
+    cout << bbt(tree6) << endl;
+    cout << bbt_better(tree6) << endl;
+
+    NodeWithParent *tree7 = new_nwp(5);
+    tree7->left = new_nwp(3);
+    tree7->right = new_nwp(7);
+    tree7->parent = nullptr;
+    tree7->left->left = new_nwp(2);
+    tree7->left->right = new_nwp(4);
+    tree7->left->parent = new_nwp(5);
+    tree7->right->left = new_nwp(6);
+    tree7->right->right = new_nwp(8);
+    tree7->right->parent = new_nwp(5);
+    tree7->left->left->parent = tree7->left;
+    tree7->left->right->parent = tree7->left;
+    tree7->right->left->parent = tree7->right;
+    tree7->right->right->parent = tree7->right;
+
+    cout << find_next(tree7, tree7)->value << endl;
+    cout << find_next_recur(tree7)->value << endl;
+
+    int arr6[] = {5, 3, 7, 2, 4, 6, 8, 1, 0, 0, 0, 0, 0, 0, 0};
+    Tree tree8 = create_from_lot(arr6, 15);
+    print_tree(tree8);
+    string s = serialize_by_pre(tree8);
+    cout << s << endl;
+    Tree tree8_rec = reconstruct_from_pre(s);
+    print_tree(tree8_rec);
 
     Tree tree9 = construct(4, 1);
     print_tree(tree9);
