@@ -5,6 +5,7 @@
 #include <stack>
 #include <queue>
 #include <map>
+#include <set>
 #include <vector>
 #include <algorithm>
 
@@ -70,7 +71,11 @@ using namespace std;
  *
  * 10、6～9 可以总结出二叉树的递归框架，彻底掌握之！该框架可以解决一切「树型 DP」问题。
  *
- * 11、找最低公共祖先节点
+ * 11、找最低公共祖先节点（递归写法的思路）
+ *
+ * 12、找后继节点
+ *
+ * 13、二叉树的序列化和反序列化
  *
  * TODO:
  *  根据先序、中序、后序、层序遍历中的两个还原树
@@ -99,6 +104,13 @@ struct ResDataOfBST {
 struct ResDataOfFBT {
     int depth;
     int num;
+};
+
+struct NodeWithParent {
+    int value;
+    NodeWithParent *left;
+    NodeWithParent *right;
+    NodeWithParent *parent;
 };
 
 Node<int> *new_node(int value);
@@ -162,7 +174,7 @@ int get_max_width(Tree root);
 
 int get_max_width_better(Tree root);
 
-// 判断二叉树是否为 BST
+// 判断二叉树是否是二叉搜索树、完全二叉树、满二叉树、平衡二叉树
 
 bool bst_basic(Tree root);
 
@@ -190,7 +202,39 @@ bool bbt_better(Tree root);
 
 ResDataOfBBT bbt_better_proc(Tree root);
 
-Node<int> *find_lowest_common_parent(Node<int> *node1, Node<int> *node2);
+// 寻找最低公共子节点
+
+Node<int> *find_lowest_ancestor(Tree root, Node<int> *node1, Node<int> *node2);
+
+void lca_proc(Tree root, map<Node<int> *, Node<int> *> &m);
+
+// 找到含父指针字段的二叉树中任意节点的后继节点
+
+NodeWithParent *new_nwp(int value);
+
+NodeWithParent *find_next(NodeWithParent *root, NodeWithParent *node);
+
+void find_next_proc(NodeWithParent *root, vector<NodeWithParent *> &vec);
+
+NodeWithParent *find_next_recur(NodeWithParent *node);
+
+NodeWithParent *left_most(NodeWithParent *root);
+
+string serialize_by_pre(Tree root);
+
+Tree reconstruct_from_pre(string str);
+
+Tree reconstruct_from_queue(queue<string> &q);
+
+void print_crease(int n);
+
+Tree construct(int depth, int left);
+
+void print_crease_better(int n);
+
+void print_crease_better_proc(int i, int n, bool down);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Node<int> *new_node(int value) {
     Node<int> *node = new Node<int>;
@@ -963,8 +1007,235 @@ ResDataOfBBT bbt_better_proc(Tree root) {
     return {balanced, depth};
 }
 
-Node<int> *find_lowest_common_parent(Node<int> *node1, Node<int> *node2) {
-    // TODO
+/**
+ * 找到最低公共子节点
+ * */
+Node<int> *find_lowest_ancestor(Tree root, Node<int> *node1, Node<int> *node2) {
+    if (!root) {
+        return nullptr;
+    }
+
+    map<Node<int> *, Node<int> *> m;
+    m.insert({root, root});
+    lca_proc(root, m);
+
+    set<Node<int> *> s;
+    s.insert(node1);
+
+    Node<int> *cur = node1;
+    while (cur != m[cur]) {
+        s.insert(cur);
+        cur = m[cur];
+    }
+    s.insert(root);
+
+    cur = node2;
+    while (true) {
+        if (s.find(cur) != s.end()) {
+            return cur;
+        }
+        cur = m[cur];
+    }
+}
+
+void lca_proc(Tree root, map<Node<int> *, Node<int> *> &m) {
+    if (!root) {
+        return;
+    }
+    m.insert({root->left, root});
+    m.insert({root->right, root});
+    lca_proc(root->left, m);
+    lca_proc(root->right, m);
+}
+
+/**
+ * 找到最低公共子节点。采用递归框架解决。
+ * */
+Node<int> *find_lowest_ancestor_recur(Tree root, Node<int> *node1, Node<int> *node2) {
+    /// 有一个是另一个的祖先
+    if (!root || root == node1 || root == node2) {
+        return root;
+    }
+    /// 否则，通过汇聚找到它们的公共祖先
+    Node<int> *left = find_lowest_ancestor_recur(root->left, node1, node2);
+    Node<int> *right = find_lowest_ancestor_recur(root->right, node1, node2);
+    /// if (!left && !right) 这种写法会出错！如果在 new 一个节点时，没有主动将其 left 和 right 指针赋值为 null，则它们不为 null。
+    /// 这个错误很致命，且藏得很深！！！
+    if (left != nullptr && right != nullptr) {
+        return root;
+    }
+    return left != nullptr ? left : right;
+}
+
+NodeWithParent *new_nwp(int value) {
+    NodeWithParent *node = new NodeWithParent;
+    node->value = value;
+    node->left = node->right = node->parent = nullptr;
+    return node;
+}
+
+/**
+ * 找给定节点的后继节点（中序遍历中本节点的下一个节点）。
+ * 最简单方式当然是直接拿到中序遍历的结果，然后遍历找到 node 的 next。
+ *
+ * 本方法没有利用 parent 指针。
+ * */
+NodeWithParent *find_next(NodeWithParent *root, NodeWithParent *node) {
+    if (!root) {
+        return nullptr;
+    }
+    vector<NodeWithParent *> vec;
+    find_next_proc(root, vec);
+    auto it = vec.begin();
+    for (; it != vec.end(); it++) {
+        if (*it == node) {
+            break;
+        }
+    }
+    return *(++it);
+}
+
+void find_next_proc(NodeWithParent *root, vector<NodeWithParent *> &vec) {
+    if (!root) {
+        return;
+    }
+    find_next_proc(root->left, vec);
+    vec.push_back(root);
+    find_next_proc(root->right, vec);
+}
+
+/**
+ * 找给定节点的后继节点（中序遍历中本节点的下一个节点）。
+ *
+ * 对任意节点：若有右树，则其后继为右树的最左节点。这个子过程会反复用到，抽象出来。
+ * */
+NodeWithParent *find_next_recur(NodeWithParent *node) {
+    if (node == nullptr) {
+        return node;
+    }
+    if (node->right != nullptr) {
+        return left_most(node->right);
+    } else {
+        NodeWithParent *parent = node->parent;
+        /// 一路网上判断自己是不是父亲的左孩子。如果是，那么这个父亲就是需要返回的节点；
+        /// 如果自己走到全局根都不满足，则意味着自己就是整棵树最右节点，此时 parent 正好也是 null，直接返回。
+        while (parent != nullptr && parent->left != node) {
+            node = parent;
+            parent = node->parent;
+        }
+        return parent;
+    }
+}
+
+/**
+ * 返回给定树的最左节点
+ * */
+NodeWithParent *left_most(NodeWithParent *root) {
+    if (!root) {
+        return root;
+    }
+    while (root->left != nullptr) {
+        root = root->left;
+    }
+    return root;
+}
+
+/**
+ * 二叉树的序列化。采用先序、中序、后序任意一个均可，只要存了空节点，单一遍历结果是可以还原出树的。
+ * */
+string serialize_by_pre(Tree root) {
+    if (root == nullptr) {
+        return "#_";
+    }
+    string res = to_string(root->data) + "_";
+    res += serialize_by_pre(root->left);
+    res += serialize_by_pre(root->right);
+    return res;
+}
+
+const int MAX_NODE_NUM = 200;
+
+/**
+ * 二叉树的反序列化。
+ * */
+Tree reconstruct_from_pre(string str) {
+    /// 结合 find 和 substr 实现 split 的效果
+    size_t pos = 0;
+    string arr[MAX_NODE_NUM], token;
+    int size = 0;
+    while ((pos = str.find('_')) != string::npos) {
+        token = str.substr(0, pos);
+        arr[size++] = token;
+        str.erase(0, pos + 1);
+    }
+    // 最后还剩下一个 "_"，不需要
+//    arr[size++] = str;
+
+    queue<string> q;
+    for (int i = 0; i < size; i++) {
+        q.push(arr[i]);
+    }
+
+    return reconstruct_from_queue(q);
+}
+
+Tree reconstruct_from_queue(queue<string> &q) {
+    string token = q.front();
+    q.pop();
+    if (token == "#") {
+        return nullptr;
+    }
+    Node<int> *node = new_node(stoi(token));
+    /// 递归创建左右子树
+    node->left = reconstruct_from_queue(q);
+    node->right = reconstruct_from_queue(q);
+    return node;
+}
+
+/**
+ * 折纸问题：
+ * 将一张纸对折 n 次，记凸折痕为 0，凹折痕为 1，从左到右依次打印折痕。
+ *
+ * 这会形成一棵高度为 n 的二叉树，该树任意左子树的根节点均为 1，右子树的根节点均为 0。
+ * 结果是这棵树的中序遍历。
+ *
+ * 本方法空间复杂度很高。
+ * */
+void print_crease(int n) {
+    Tree tree = construct(n, 1);
+    in_order_recur(tree);
+}
+
+Tree construct(int depth, int left) {
+    Node<int> *node;
+    if (left) {
+        node = new_node(1);
+    } else {
+        node = new_node(0);
+    }
+    if (depth > 1) {
+        Tree left_node = construct(depth - 1, 1);
+        Tree right_node = construct(depth - 1, 0);
+        node->left = left_node;
+        node->right = right_node;
+    }
+    return node;
+}
+
+/**
+ * 根本不需要建树。直接中序遍历递归就完了。
+ * */
+void print_crease_better(int n) {
+    print_crease_better_proc(1, n, true);
+}
+
+void print_crease_better_proc(int i, int n, bool down) {
+    if (i > n) {
+        return;
+    }
+    print_crease_better_proc(i + 1, n, true);
+    cout << (down ? 1 : 0) << " ";
+    print_crease_better_proc(i + 1, n, false);
 }
 
 int main() {
@@ -1048,23 +1319,59 @@ int main() {
 //    cout << bbt_better(tree4) << endl;
 //    cout << get_max_width_better(tree4) << endl;
 //    cout << get_max_width(tree4) << endl;
-
-    int arr4[] = {5, 3, 7, 2, 4, 6, 8, 1, 0, 0, 0, 0, 0, 0, 0};
-    Tree tree5 = create_from_lot(arr4, 15);
-    print_tree(tree5);
-
-    cout << bst_basic(tree5) << endl;
-    cout << bst_recur(tree5) << endl;
-    cout << bst_traverse(tree5) << endl;
-    cout << bst_recur_better(tree5) << endl;
-    cout << fbt(tree5) << endl;
-
+//
+//    int arr4[] = {5, 3, 7, 2, 4, 6, 8, 1, 0, 0, 0, 0, 0, 0, 0};
+//    Tree tree5 = create_from_lot(arr4, 15);
+//    print_tree(tree5);
+//
+//    cout << bst_basic(tree5) << endl;
+//    cout << bst_recur(tree5) << endl;
+//    cout << bst_traverse(tree5) << endl;
+//    cout << bst_recur_better(tree5) << endl;
+//    cout << fbt(tree5) << endl;
+//
+//    cout << find_lowest_ancestor(tree5, tree5->left->left->left, tree5->right->left)->data << endl;
+//    cout << find_lowest_ancestor_recur(tree5, tree5->left->left->left, tree5->right->left)->data << endl;
+//
 //    int arr5[] = {5, 3, 7, 2, 4, 6, 8, 1, 0, 0, 0, 0, 0, 0, 0};
 //    Tree tree6 = create_from_lot(arr5, 15);
 //    print_tree(tree6);
 //    cout << cbt(tree6) << endl;
 //    cout << bbt(tree6) << endl;
 //    cout << bbt_better(tree6) << endl;
+//
+//    NodeWithParent *tree7 = new_nwp(5);
+//    tree7->left = new_nwp(3);
+//    tree7->right = new_nwp(7);
+//    tree7->parent = nullptr;
+//    tree7->left->left = new_nwp(2);
+//    tree7->left->right = new_nwp(4);
+//    tree7->left->parent = new_nwp(5);
+//    tree7->right->left = new_nwp(6);
+//    tree7->right->right = new_nwp(8);
+//    tree7->right->parent = new_nwp(5);
+//    tree7->left->left->parent = tree7->left;
+//    tree7->left->right->parent = tree7->left;
+//    tree7->right->left->parent = tree7->right;
+//    tree7->right->right->parent = tree7->right;
+//
+//    cout << find_next(tree7, tree7)->value << endl;
+//    cout << find_next_recur(tree7)->value << endl;
+//
+//    int arr6[] = {5, 3, 7, 2, 4, 6, 8, 1, 0, 0, 0, 0, 0, 0, 0};
+//    Tree tree8 = create_from_lot(arr6, 15);
+//    print_tree(tree8);
+//    string s = serialize_by_pre(tree8);
+//    cout << s << endl;
+//    Tree tree8_rec = reconstruct_from_pre(s);
+//    print_tree(tree8_rec);
+
+    Tree tree9 = construct(4, 1);
+    print_tree(tree9);
+    print_crease(4);
+    cout << endl;
+    print_crease_better(4);
+    cout << endl;
 
     return 0;
 }

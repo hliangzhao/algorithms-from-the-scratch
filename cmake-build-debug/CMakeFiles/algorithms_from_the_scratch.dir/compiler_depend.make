@@ -232,8 +232,11 @@ CMakeFiles/algorithms_from_the_scratch.dir/5-tree/1-binary-tree.cpp.o: /Users/hl
   /Library/Developer/CommandLineTools/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/__tree \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/__node_handle \
-  /Library/Developer/CommandLineTools/usr/include/c++/v1/optional
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/optional \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/set
 
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/optional:
 
