@@ -1,8 +1,15 @@
 ## Algorithms from the Scratch
 
+### TODO
+
+* 梳理《Essential C++》中剩余部分；
+* 补充树和图上的其他常见问题和算法。
+
+---
+
 ### 0 Essential CPP
 
-这里给出 C++ 核心知识点。
+基于 [《Essential C++》](https://www.amazon.sg/Essential-C-Stanley-B-Lippman/dp/0201485184) 梳理 C++ 核心知识。
 
 ### 1 Complexity, XOR, and Sort
 
@@ -41,3 +48,10 @@
 * 找最低公共祖先节点；
 * 找后继节点；
 * 二叉树的序列化和反序列化。
+
+### 6 Graph
+
+* 实现适配器，将各种表示的图转换为最好写代码的图的数据结构；
+* 图上的 BFS 和 DFS；
+* 有向无环图的拓扑排序；
+* 最小生成树的 K 算法 和 P 算法（并查集等 API 的自主实现）。
