@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-6-graph/1-graph.o: 6-graph/1-graph.cpp.o
-.PHONY : 6-graph/1-graph.o
+7-greedy/2-greedy.o: 7-greedy/2-greedy.cpp.o
+.PHONY : 7-greedy/2-greedy.o
 
 # target to build an object file
-6-graph/1-graph.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o
-.PHONY : 6-graph/1-graph.cpp.o
+7-greedy/2-greedy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/2-greedy.cpp.o
+.PHONY : 7-greedy/2-greedy.cpp.o
 
-6-graph/1-graph.i: 6-graph/1-graph.cpp.i
-.PHONY : 6-graph/1-graph.i
+7-greedy/2-greedy.i: 7-greedy/2-greedy.cpp.i
+.PHONY : 7-greedy/2-greedy.i
 
 # target to preprocess a source file
-6-graph/1-graph.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.i
-.PHONY : 6-graph/1-graph.cpp.i
+7-greedy/2-greedy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/2-greedy.cpp.i
+.PHONY : 7-greedy/2-greedy.cpp.i
 
-6-graph/1-graph.s: 6-graph/1-graph.cpp.s
-.PHONY : 6-graph/1-graph.s
+7-greedy/2-greedy.s: 7-greedy/2-greedy.cpp.s
+.PHONY : 7-greedy/2-greedy.s
 
 # target to generate assembly for a file
-6-graph/1-graph.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.s
-.PHONY : 6-graph/1-graph.cpp.s
+7-greedy/2-greedy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/2-greedy.cpp.s
+.PHONY : 7-greedy/2-greedy.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 6-graph/1-graph.o"
-	@echo "... 6-graph/1-graph.i"
-	@echo "... 6-graph/1-graph.s"
+	@echo "... 7-greedy/2-greedy.o"
+	@echo "... 7-greedy/2-greedy.i"
+	@echo "... 7-greedy/2-greedy.s"
 .PHONY : help
 
 

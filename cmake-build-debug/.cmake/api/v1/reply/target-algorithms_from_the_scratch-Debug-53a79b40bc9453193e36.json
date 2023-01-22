@@ -94,7 +94,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "6-graph/1-graph.cpp",
+			"path" : "7-greedy/2-greedy.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
