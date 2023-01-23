@@ -6,6 +6,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <queue>
 
 using namespace std;
 
@@ -117,6 +118,126 @@ string composite(vector<string> &vec) {
     return res;
 }
 
+/**
+ * 问题三：给定数组，返回最小分割代价。
+ * {10, 20, 30}：
+ * 方案一：60 --> 10 + 50, 50 --> 20 + 30，代价 60 + 50 = 110；
+ * 方案二：60 --> 30 + 30, 30 --> 10 + 20, 代价 60 + 30 = 90。
+ *
+ * 基于哈夫曼编码解决。
+ * */
+int min_cutting_cost(const int *arr, int size) {
+    priority_queue<int, vector<int>, greater<int>> pq(arr, arr + size);
+    int res = 0;
+    while (pq.size() > 1) {
+        int v1 = pq.top();
+        pq.pop();
+        int v2 = pq.top();
+        pq.pop();
+        res += v1 + v2;
+        pq.push(v1 + v2);
+    }
+    return res;
+}
+
+/**
+ * 问题四：正数数组 costs 和 profits，k 表示最多可同时做的项目个数，m 表示初始资金。
+ * 每一个做完的项目可以立即获得收益，可以支持去做下一个项目。求最后获得的最大钱数。
+ *
+ * 让项目按照成本升序排列（小根堆），然后按照利润降序排列，依次选择项目进行。
+ * */
+
+struct Project {
+    int cost;
+    int profit;
+};
+
+Project *new_project(int c, int p) {
+    auto *proj = new Project;
+    proj->cost = c;
+    proj->profit = p;
+    return proj;
+}
+
+struct MinCost {
+    bool operator()(const Project *p1, const Project *p2) {
+        /// 默认是大根堆，想要改成小根堆，less 函数应按照 cost 降序来写
+        /// 从而使得 cost 小的，在堆顶
+        return p1->cost > p2->cost;
+    }
+};
+
+struct MaxProfit {
+    bool operator()(const Project *p1, const Project *p2) {
+        /// profit 大的，在堆顶
+        return p1->profit < p2->profit;
+    }
+};
+
+int max_profits(int *costs, int *profits, int size, int k, int m) {
+    priority_queue<Project *, vector<Project *>, MinCost> locked_p;
+    priority_queue<Project *, vector<Project *>, MaxProfit> unlocked_p;
+    for (int i = 0; i < size; i++) {
+        locked_p.push(new_project(costs[i], profits[i]));
+    }
+    for (int i = 0; i < k; i++) {
+        while (!locked_p.empty() && locked_p.top()->cost <= m) {
+            unlocked_p.push(locked_p.top());
+            locked_p.pop();
+        }
+        if (unlocked_p.empty()) {
+            return m;
+        }
+        m += unlocked_p.top()->profit;
+        unlocked_p.pop();
+    }
+    return m;
+}
+
+/**
+ * 问题五：源源不断给数，要求在任意时刻，都能返回目前已给数的中位数。
+ *
+ * 同时维护一个大根堆和一个小根堆，通过调整保证大根堆存放的是较小的那一部分数，小根堆存放的是较大的那一部分数。
+ * */
+float find_mid(const vector<int> &vec, priority_queue<int> &big_end,
+               priority_queue<int, vector<int>, greater<int>> &small_end) {
+    int inqueued_num = (int) (big_end.size() + small_end.size());
+    for (int i = 0; i < vec.size(); i++) {
+        if (i >= inqueued_num) {
+            int to_be_input = vec[i];
+
+            if (big_end.empty()) {
+                big_end.push(to_be_input);
+            } else {
+                if (to_be_input <= big_end.top()) {
+                    big_end.push(to_be_input);
+                } else {
+                    small_end.push(to_be_input);
+                }
+            }
+
+            if (big_end.size() - small_end.size() == 2) {
+                small_end.push(big_end.top());
+                big_end.pop();
+            } else if (small_end.size() - big_end.size() == 2) {
+                big_end.push(small_end.top());
+                small_end.pop();
+            }
+        }
+    }
+    float res;
+    if ((big_end.size() + small_end.size()) % 2 == 1) {
+        if (big_end.size() > small_end.size()) {
+            res = (float) big_end.top();
+        } else {
+            res = (float) small_end.top();
+        }
+    } else {
+        res = (float) (big_end.top() + small_end.top()) / 2;
+    }
+    return res;
+}
+
 int main() {
 //    vector<Program *> programs;
 //    programs.push_back(new_prog(0, 2));
@@ -127,9 +248,26 @@ int main() {
 //    programs.push_back(new_prog(3, 9));
 //    cout << arrange_program(programs, 0) << endl;
 
-    string arr[] = {"ba", "bc", "b"};
-    vector<string> vec(arr, arr + 3);
-    cout << composite(vec) << endl;
+//    string arr[] = {"ba", "bc", "b"};
+//    vector<string> vec(arr, arr + 3);
+//    cout << composite(vec) << endl;
+
+//    int arr2[] = {10, 20, 30};
+//    cout << min_cutting_cost(arr2, 3) << endl;
+
+//    int costs[] = {3, 1, 4, 9, 9};
+//    int profits[] = {1, 2, 3, 7, 4};
+//    cout << max_profits(costs, profits, 5, 4, 1) << endl;
+
+    int arr3[] = {3, 1, 4, 9, 9};
+    vector<int> vec(arr3, arr3 + 5);
+    priority_queue<int> big_end;
+    priority_queue<int, vector<int>, greater<int>> small_end;
+    cout << find_mid(vec, big_end, small_end) << endl;
+    vec.push_back(5);
+    cout << find_mid(vec, big_end, small_end) << endl;
+    vec.push_back(6);
+    cout << find_mid(vec, big_end, small_end) << endl;
 
     return 0;
 }
