@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-7-greedy/2-greedy.o: 7-greedy/2-greedy.cpp.o
-.PHONY : 7-greedy/2-greedy.o
+7-greedy/3-n-queens.o: 7-greedy/3-n-queens.cpp.o
+.PHONY : 7-greedy/3-n-queens.o
 
 # target to build an object file
-7-greedy/2-greedy.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/2-greedy.cpp.o
-.PHONY : 7-greedy/2-greedy.cpp.o
+7-greedy/3-n-queens.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.o
+.PHONY : 7-greedy/3-n-queens.cpp.o
 
-7-greedy/2-greedy.i: 7-greedy/2-greedy.cpp.i
-.PHONY : 7-greedy/2-greedy.i
+7-greedy/3-n-queens.i: 7-greedy/3-n-queens.cpp.i
+.PHONY : 7-greedy/3-n-queens.i
 
 # target to preprocess a source file
-7-greedy/2-greedy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/2-greedy.cpp.i
-.PHONY : 7-greedy/2-greedy.cpp.i
+7-greedy/3-n-queens.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.i
+.PHONY : 7-greedy/3-n-queens.cpp.i
 
-7-greedy/2-greedy.s: 7-greedy/2-greedy.cpp.s
-.PHONY : 7-greedy/2-greedy.s
+7-greedy/3-n-queens.s: 7-greedy/3-n-queens.cpp.s
+.PHONY : 7-greedy/3-n-queens.s
 
 # target to generate assembly for a file
-7-greedy/2-greedy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/2-greedy.cpp.s
-.PHONY : 7-greedy/2-greedy.cpp.s
+7-greedy/3-n-queens.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.s
+.PHONY : 7-greedy/3-n-queens.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 7-greedy/2-greedy.o"
-	@echo "... 7-greedy/2-greedy.i"
-	@echo "... 7-greedy/2-greedy.s"
+	@echo "... 7-greedy/3-n-queens.o"
+	@echo "... 7-greedy/3-n-queens.i"
+	@echo "... 7-greedy/3-n-queens.s"
 .PHONY : help
 
 

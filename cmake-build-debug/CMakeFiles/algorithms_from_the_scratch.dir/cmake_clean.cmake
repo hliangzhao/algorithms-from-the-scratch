@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/2-greedy.cpp.o"
-  "CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/2-greedy.cpp.o.d"
+  "CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.o"
+  "CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.o.d"
   "algorithms_from_the_scratch"
   "algorithms_from_the_scratch.pdb"
 )
