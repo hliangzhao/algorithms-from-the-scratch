@@ -69,28 +69,28 @@ include CMakeFiles/algorithms_from_the_scratch.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/algorithms_from_the_scratch.dir/flags.make
 
-CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.o: CMakeFiles/algorithms_from_the_scratch.dir/flags.make
-CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.o: /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/7-greedy/3-n-queens.cpp
-CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.o: CMakeFiles/algorithms_from_the_scratch.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.o -MF CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.o.d -o CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.o -c /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/7-greedy/3-n-queens.cpp
+CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o: CMakeFiles/algorithms_from_the_scratch.dir/flags.make
+CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o: /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/6-graph/1-graph.cpp
+CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o: CMakeFiles/algorithms_from_the_scratch.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o -MF CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o.d -o CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o -c /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/6-graph/1-graph.cpp
 
-CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/7-greedy/3-n-queens.cpp > CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.i
+CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/6-graph/1-graph.cpp > CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.i
 
-CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/7-greedy/3-n-queens.cpp -o CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.s
+CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/6-graph/1-graph.cpp -o CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.s
 
 # Object files for target algorithms_from_the_scratch
 algorithms_from_the_scratch_OBJECTS = \
-"CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.o"
+"CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o"
 
 # External object files for target algorithms_from_the_scratch
 algorithms_from_the_scratch_EXTERNAL_OBJECTS =
 
-algorithms_from_the_scratch: CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/3-n-queens.cpp.o
+algorithms_from_the_scratch: CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o
 algorithms_from_the_scratch: CMakeFiles/algorithms_from_the_scratch.dir/build.make
 algorithms_from_the_scratch: CMakeFiles/algorithms_from_the_scratch.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable algorithms_from_the_scratch"

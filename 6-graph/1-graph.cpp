@@ -73,7 +73,7 @@ set<Edge *> prim(Graph *g);
 
 // Dijkstra 算法求最短路径和
 
-Node *get_min_dis_and_unselected_node(const map<Node *, int>& node2min_dis, const set<Node *>& selected_nodes);
+Node *get_min_dis_and_unselected_node(const map<Node *, int> &node2min_dis, const set<Node *> &selected_nodes);
 
 map<Node *, int> dijkstra(Graph *g, Node *start);
 
@@ -455,7 +455,7 @@ set<Edge *> prim(Graph *g) {
  * Dijkstra 算法的辅助算法：从最短距离表中选择一个距离最小的、尚未被 confirmed 的节点。
  * 这个子程序如果要用小根堆来实现，则需要自己实现堆，而不应该直接采用 STL 提供的优先队列，否则效率很低。
  * */
-Node *get_min_dis_and_unselected_node(const map<Node *, int>& node2min_dis, const set<Node *>& selected_nodes) {
+Node *get_min_dis_and_unselected_node(const map<Node *, int> &node2min_dis, const set<Node *> &selected_nodes) {
     int min_dis = INT_MAX;
     Node *res = nullptr;
     for (auto &node: node2min_dis) {
@@ -490,6 +490,161 @@ map<Node *, int> dijkstra(Graph *g, Node *start) {
         min_node = get_min_dis_and_unselected_node(node2min_dis, confirmed);
     }
     return node2min_dis;
+}
+
+/**
+ * Dijkstra 算法的第二种实现：使用自主实现的堆。
+ * 这比 get_min_dis_and_unselected_node() 这个函数中的遍历操作要更快。
+ * */
+
+const int MAX_NODE_NUM = 200 + 5;
+
+/*
+ * 为实现 Dijkstra 算法所自主设计的小根堆
+ * */
+struct NodeHeap {
+    Node *nodes[MAX_NODE_NUM]{nullptr};    /// 堆的底层数据结构是数组
+    map<Node *, int> node2idx;
+    map<Node *, int> node2dis;
+    int size{0};                     /// 目前在堆中的节点的个数 + 1（max index in the array）
+};
+
+/*
+ * 记录从 start 节点到 node 节点的距离 dis
+ * */
+struct NodeRec {
+    Node *node;
+    int dis;
+};
+
+NodeHeap *new_node_heap(int size) {
+    /// 调用 new 的时候，node2idx 和 node2dis 在内部会自动初始化，但是 nodes 数组和 size 变量不会。
+    /// 为了让它们也在 new 的时候直接初始化，我们在其定义上加上 "{}"
+    auto *heap = new NodeHeap;
+//    for (int i = 0; i < size; i++) {
+//        heap->nodes[i] = nullptr;
+//    }
+//    heap->size = 0;
+    return heap;
+}
+
+NodeRec *new_node_record(Node *node, int dis) {
+    auto *rec = new NodeRec;
+    rec->node = node;
+    rec->dis = dis;
+    return rec;
+}
+
+/*
+ * 判空
+ * */
+int empty(NodeHeap *heap) {
+    return heap->size == 0;
+}
+
+/*
+ * 判断给定 node 是否进来过堆
+ * */
+bool entered(NodeHeap *heap, Node *node) {
+    return heap->node2idx.find(node) != heap->node2idx.end();
+}
+
+/*
+ * 判断给定 node 此时是否在堆中：要求进来过，且在内部数组中的 index 不为 -1
+ * -1 是手动设计的标志
+ * */
+bool in(NodeHeap *heap, Node *node) {
+    return entered(heap, node) && heap->node2idx[node] != -1;
+}
+
+/*
+ * 在堆上交换节点
+ * */
+void swap(NodeHeap *heap, int idx1, int idx2) {
+//    if (!in(heap, heap->nodes[idx1]) || !in(heap, heap->nodes[idx2])) {
+//        return;
+//    }
+    heap->node2idx[heap->nodes[idx1]] = idx2;
+    heap->node2idx[heap->nodes[idx2]] = idx1;
+    Node *tmp = heap->nodes[idx1];
+    heap->nodes[idx1] = heap->nodes[idx2];
+    heap->nodes[idx2] = tmp;
+}
+
+/*
+ * 将 idx（入参 idx = 0，作为根）自顶向下被调整到树的合适位置
+ * */
+void heapify(NodeHeap *heap, int idx, int size) {
+    int left = 2 * idx + 1;
+    while (left < size) {
+        int smallest = left + 1 < size &&
+                       heap->node2dis[heap->nodes[left + 1]] < heap->node2dis[heap->nodes[left]] ? left + 1 : left;
+        smallest = heap->node2dis[heap->nodes[smallest]] < heap->node2dis[heap->nodes[idx]] ? smallest : idx;
+        if (smallest == idx) {
+            break;
+        }
+        swap(heap, smallest, idx);
+        idx = smallest;
+        left = 2 * idx + 1;
+    }
+}
+
+/*
+ * 将新插入的编号为 idx 的节点调整到合适的位置上
+ * */
+void heap_insert(NodeHeap *heap, int idx) {
+    while (heap->node2dis[heap->nodes[idx]] < heap->node2dis[heap->nodes[(idx - 1) / 2]]) {
+        swap(heap, idx, (idx - 1) / 2);
+        idx = (idx - 1) / 2;
+    }
+}
+
+/*
+ * 弹出堆顶节点
+ * */
+NodeRec *pop(NodeHeap *heap) {
+    NodeRec *rec = new_node_record(heap->nodes[0], heap->node2dis[heap->nodes[0]]);
+    swap(heap, 0, heap->size - 1);
+    heap->node2idx[heap->nodes[heap->size - 1]] = -1;
+    heap->node2dis.erase(heap->nodes[heap->size - 1]);
+    /// 堆上存放的都是指针，并没有新建节点，因此不应当使用 delete！
+//    delete heap->nodes[heap->size - 1];
+    heap->nodes[heap->size - 1] = nullptr;
+    heapify(heap, 0, --heap->size);
+    return rec;
+}
+
+void add_or_update_or_ignore(NodeHeap *heap, Node *node, int dis) {
+    if (in(heap, node)) {
+        // update
+        heap->node2dis[node] = min(heap->node2dis[node], dis);
+        heap_insert(heap, heap->node2idx[node]);
+    }
+    if (!entered(heap, node)) {
+        heap->nodes[heap->size] = node;
+        heap->node2idx.insert({node, heap->size});
+        heap->node2dis.insert({node, dis});
+        heap_insert(heap, heap->size++);
+    }
+    /// 进来过，但此刻不在堆上，说明已经处理过了
+    // do nothing
+}
+
+map<Node *, int> dijkstra2(Graph *g, Node *start, int size) {
+    NodeHeap *heap = new_node_heap(size);
+    add_or_update_or_ignore(heap, start, 0);
+    map<Node *, int> res;
+    while (!empty(heap)) {
+        NodeRec *rec = pop(heap);
+        Node *cur = rec->node;
+        int dis = rec->dis;
+        for (auto &e: cur->edges) {
+            add_or_update_or_ignore(heap, e->dst, e->weight + dis);
+        }
+//        res[cur] = dis;
+        res.insert({cur, dis});
+    }
+    return res;
 }
 
 int main() {
@@ -584,7 +739,7 @@ int main() {
     Graph *g5 = adaptor2(adj_mat1, 4);
     print(g5);
     set<Edge *> min_span_tree5 = kruskal(g5);
-    for (auto &e:min_span_tree5){
+    for (auto &e: min_span_tree5) {
         cout << "(" << e->src->value << ", " << e->dst->value << "), weight: " << e->weight << endl;
     }
     cout << endl;
@@ -610,10 +765,12 @@ int main() {
     Graph *g6 = adaptor2(adj_mat2, 6);
     print(g6);
     set<Edge *> k6 = kruskal(g6);
+    cout << "Kruskal:\n";
     for (auto &e: k6) {
         cout << "(" << e->src->value << ", " << e->dst->value << "), weight: " << e->weight << endl;
     }
     cout << endl;
+    cout << "Prim:\n";
     set<Edge *> p6 = prim(g6);
     for (auto &e: p6) {
         cout << "(" << e->src->value << ", " << e->dst->value << "), weight: " << e->weight << endl;
@@ -622,8 +779,16 @@ int main() {
 
     Node *start = g6->nodes.at(0);
     map<Node *, int> min_dis = dijkstra(g6, start);
+    map<Node *, int> min_dis2 = dijkstra2(g6, start, 6);
+    cout << "Dijkstra #1:\n";
     cout << "start node: " << start->value << endl;
     for (auto &n2d: min_dis) {
+        cout << "end node: " << n2d.first->value << ", dis: " << n2d.second << endl;
+    }
+    cout << endl;
+    cout << "Dijkstra #2:\n";
+    cout << "start node: " << start->value << endl;
+    for (auto &n2d: min_dis2) {
         cout << "end node: " << n2d.first->value << ", dis: " << n2d.second << endl;
     }
     cout << endl;
