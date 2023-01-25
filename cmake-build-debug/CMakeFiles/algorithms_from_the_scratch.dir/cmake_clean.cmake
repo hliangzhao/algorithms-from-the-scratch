@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o"
-  "CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o.d"
+  "CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/4-brute-force.cpp.o"
+  "CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/4-brute-force.cpp.o.d"
   "algorithms_from_the_scratch"
   "algorithms_from_the_scratch.pdb"
 )

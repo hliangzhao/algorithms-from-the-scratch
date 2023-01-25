@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/6-graph/1-graph.cpp" "CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o" "gcc" "CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o.d"
+  "/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/7-greedy/4-brute-force.cpp" "CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/4-brute-force.cpp.o" "gcc" "CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/4-brute-force.cpp.o.d"
   )
 
 # Targets to which this target links.

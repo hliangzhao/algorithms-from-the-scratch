@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-6-graph/1-graph.o: 6-graph/1-graph.cpp.o
-.PHONY : 6-graph/1-graph.o
+7-greedy/4-brute-force.o: 7-greedy/4-brute-force.cpp.o
+.PHONY : 7-greedy/4-brute-force.o
 
 # target to build an object file
-6-graph/1-graph.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.o
-.PHONY : 6-graph/1-graph.cpp.o
+7-greedy/4-brute-force.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/4-brute-force.cpp.o
+.PHONY : 7-greedy/4-brute-force.cpp.o
 
-6-graph/1-graph.i: 6-graph/1-graph.cpp.i
-.PHONY : 6-graph/1-graph.i
+7-greedy/4-brute-force.i: 7-greedy/4-brute-force.cpp.i
+.PHONY : 7-greedy/4-brute-force.i
 
 # target to preprocess a source file
-6-graph/1-graph.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.i
-.PHONY : 6-graph/1-graph.cpp.i
+7-greedy/4-brute-force.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/4-brute-force.cpp.i
+.PHONY : 7-greedy/4-brute-force.cpp.i
 
-6-graph/1-graph.s: 6-graph/1-graph.cpp.s
-.PHONY : 6-graph/1-graph.s
+7-greedy/4-brute-force.s: 7-greedy/4-brute-force.cpp.s
+.PHONY : 7-greedy/4-brute-force.s
 
 # target to generate assembly for a file
-6-graph/1-graph.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/6-graph/1-graph.cpp.s
-.PHONY : 6-graph/1-graph.cpp.s
+7-greedy/4-brute-force.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/4-brute-force.cpp.s
+.PHONY : 7-greedy/4-brute-force.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 6-graph/1-graph.o"
-	@echo "... 6-graph/1-graph.i"
-	@echo "... 6-graph/1-graph.s"
+	@echo "... 7-greedy/4-brute-force.o"
+	@echo "... 7-greedy/4-brute-force.i"
+	@echo "... 7-greedy/4-brute-force.s"
 .PHONY : help
 
 

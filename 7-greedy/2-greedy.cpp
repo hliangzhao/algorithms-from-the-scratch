@@ -239,35 +239,35 @@ float find_mid(const vector<int> &vec, priority_queue<int> &big_end,
 }
 
 int main() {
-//    vector<Program *> programs;
-//    programs.push_back(new_prog(0, 2));
-//    programs.push_back(new_prog(8, 10));
-//    programs.push_back(new_prog(6, 8));
-//    programs.push_back(new_prog(5, 7));
-//    programs.push_back(new_prog(1, 4));
-//    programs.push_back(new_prog(3, 9));
-//    cout << arrange_program(programs, 0) << endl;
+    vector<Program *> programs;
+    programs.push_back(new_prog(0, 2));
+    programs.push_back(new_prog(8, 10));
+    programs.push_back(new_prog(6, 8));
+    programs.push_back(new_prog(5, 7));
+    programs.push_back(new_prog(1, 4));
+    programs.push_back(new_prog(3, 9));
+    cout << arrange_program(programs, 0) << endl;
 
-//    string arr[] = {"ba", "bc", "b"};
-//    vector<string> vec(arr, arr + 3);
-//    cout << composite(vec) << endl;
+    string arr[] = {"ba", "bc", "b"};
+    vector<string> vec(arr, arr + 3);
+    cout << composite(vec) << endl;
 
-//    int arr2[] = {10, 20, 30};
-//    cout << min_cutting_cost(arr2, 3) << endl;
+    int arr2[] = {10, 20, 30};
+    cout << min_cutting_cost(arr2, 3) << endl;
 
-//    int costs[] = {3, 1, 4, 9, 9};
-//    int profits[] = {1, 2, 3, 7, 4};
-//    cout << max_profits(costs, profits, 5, 4, 1) << endl;
+    int costs[] = {3, 1, 4, 9, 9};
+    int profits[] = {1, 2, 3, 7, 4};
+    cout << max_profits(costs, profits, 5, 4, 1) << endl;
 
     int arr3[] = {3, 1, 4, 9, 9};
-    vector<int> vec(arr3, arr3 + 5);
+    vector<int> vec2(arr3, arr3 + 5);
     priority_queue<int> big_end;
     priority_queue<int, vector<int>, greater<int>> small_end;
-    cout << find_mid(vec, big_end, small_end) << endl;
-    vec.push_back(5);
-    cout << find_mid(vec, big_end, small_end) << endl;
-    vec.push_back(6);
-    cout << find_mid(vec, big_end, small_end) << endl;
+    cout << find_mid(vec2, big_end, small_end) << endl;
+    vec2.push_back(5);
+    cout << find_mid(vec2, big_end, small_end) << endl;
+    vec2.push_back(6);
+    cout << find_mid(vec2, big_end, small_end) << endl;
 
     return 0;
 }
