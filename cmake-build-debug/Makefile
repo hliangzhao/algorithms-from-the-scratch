@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-9-ordered-list/1-disjoint-set.o: 9-ordered-list/1-disjoint-set.cpp.o
-.PHONY : 9-ordered-list/1-disjoint-set.o
+9-ordered-list/2-kmp.o: 9-ordered-list/2-kmp.cpp.o
+.PHONY : 9-ordered-list/2-kmp.o
 
 # target to build an object file
-9-ordered-list/1-disjoint-set.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o
-.PHONY : 9-ordered-list/1-disjoint-set.cpp.o
+9-ordered-list/2-kmp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/2-kmp.cpp.o
+.PHONY : 9-ordered-list/2-kmp.cpp.o
 
-9-ordered-list/1-disjoint-set.i: 9-ordered-list/1-disjoint-set.cpp.i
-.PHONY : 9-ordered-list/1-disjoint-set.i
+9-ordered-list/2-kmp.i: 9-ordered-list/2-kmp.cpp.i
+.PHONY : 9-ordered-list/2-kmp.i
 
 # target to preprocess a source file
-9-ordered-list/1-disjoint-set.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.i
-.PHONY : 9-ordered-list/1-disjoint-set.cpp.i
+9-ordered-list/2-kmp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/2-kmp.cpp.i
+.PHONY : 9-ordered-list/2-kmp.cpp.i
 
-9-ordered-list/1-disjoint-set.s: 9-ordered-list/1-disjoint-set.cpp.s
-.PHONY : 9-ordered-list/1-disjoint-set.s
+9-ordered-list/2-kmp.s: 9-ordered-list/2-kmp.cpp.s
+.PHONY : 9-ordered-list/2-kmp.s
 
 # target to generate assembly for a file
-9-ordered-list/1-disjoint-set.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.s
-.PHONY : 9-ordered-list/1-disjoint-set.cpp.s
+9-ordered-list/2-kmp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/2-kmp.cpp.s
+.PHONY : 9-ordered-list/2-kmp.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 9-ordered-list/1-disjoint-set.o"
-	@echo "... 9-ordered-list/1-disjoint-set.i"
-	@echo "... 9-ordered-list/1-disjoint-set.s"
+	@echo "... 9-ordered-list/2-kmp.o"
+	@echo "... 9-ordered-list/2-kmp.i"
+	@echo "... 9-ordered-list/2-kmp.s"
 .PHONY : help
 
 

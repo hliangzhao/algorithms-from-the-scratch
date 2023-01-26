@@ -94,7 +94,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "9-ordered-list/1-disjoint-set.cpp",
+			"path" : "9-ordered-list/2-kmp.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

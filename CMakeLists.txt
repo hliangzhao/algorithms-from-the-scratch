@@ -3,4 +3,4 @@ project(algorithms_from_the_scratch)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(algorithms_from_the_scratch 9-ordered-list/1-disjoint-set.cpp)
+add_executable(algorithms_from_the_scratch 9-ordered-list/2-kmp.cpp)
