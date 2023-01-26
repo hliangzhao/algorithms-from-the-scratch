@@ -1,1 +1,1 @@
-/usr/bin/clang++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/4-brute-force.cpp.o" -o algorithms_from_the_scratch 
+/usr/bin/clang++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o" "CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o" -o algorithms_from_the_scratch 

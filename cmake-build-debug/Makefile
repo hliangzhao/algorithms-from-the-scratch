@@ -129,29 +129,53 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-7-greedy/4-brute-force.o: 7-greedy/4-brute-force.cpp.o
-.PHONY : 7-greedy/4-brute-force.o
+8-hash/2-bloom-filter.o: 8-hash/2-bloom-filter.cpp.o
+.PHONY : 8-hash/2-bloom-filter.o
 
 # target to build an object file
-7-greedy/4-brute-force.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/4-brute-force.cpp.o
-.PHONY : 7-greedy/4-brute-force.cpp.o
+8-hash/2-bloom-filter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o
+.PHONY : 8-hash/2-bloom-filter.cpp.o
 
-7-greedy/4-brute-force.i: 7-greedy/4-brute-force.cpp.i
-.PHONY : 7-greedy/4-brute-force.i
+8-hash/2-bloom-filter.i: 8-hash/2-bloom-filter.cpp.i
+.PHONY : 8-hash/2-bloom-filter.i
 
 # target to preprocess a source file
-7-greedy/4-brute-force.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/4-brute-force.cpp.i
-.PHONY : 7-greedy/4-brute-force.cpp.i
+8-hash/2-bloom-filter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.i
+.PHONY : 8-hash/2-bloom-filter.cpp.i
 
-7-greedy/4-brute-force.s: 7-greedy/4-brute-force.cpp.s
-.PHONY : 7-greedy/4-brute-force.s
+8-hash/2-bloom-filter.s: 8-hash/2-bloom-filter.cpp.s
+.PHONY : 8-hash/2-bloom-filter.s
 
 # target to generate assembly for a file
-7-greedy/4-brute-force.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/7-greedy/4-brute-force.cpp.s
-.PHONY : 7-greedy/4-brute-force.cpp.s
+8-hash/2-bloom-filter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.s
+.PHONY : 8-hash/2-bloom-filter.cpp.s
+
+8-hash/3-consistent-hashing.o: 8-hash/3-consistent-hashing.cpp.o
+.PHONY : 8-hash/3-consistent-hashing.o
+
+# target to build an object file
+8-hash/3-consistent-hashing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o
+.PHONY : 8-hash/3-consistent-hashing.cpp.o
+
+8-hash/3-consistent-hashing.i: 8-hash/3-consistent-hashing.cpp.i
+.PHONY : 8-hash/3-consistent-hashing.i
+
+# target to preprocess a source file
+8-hash/3-consistent-hashing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.i
+.PHONY : 8-hash/3-consistent-hashing.cpp.i
+
+8-hash/3-consistent-hashing.s: 8-hash/3-consistent-hashing.cpp.s
+.PHONY : 8-hash/3-consistent-hashing.s
+
+# target to generate assembly for a file
+8-hash/3-consistent-hashing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.s
+.PHONY : 8-hash/3-consistent-hashing.cpp.s
 
 # Help Target
 help:
@@ -162,9 +186,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 7-greedy/4-brute-force.o"
-	@echo "... 7-greedy/4-brute-force.i"
-	@echo "... 7-greedy/4-brute-force.s"
+	@echo "... 8-hash/2-bloom-filter.o"
+	@echo "... 8-hash/2-bloom-filter.i"
+	@echo "... 8-hash/2-bloom-filter.s"
+	@echo "... 8-hash/3-consistent-hashing.o"
+	@echo "... 8-hash/3-consistent-hashing.i"
+	@echo "... 8-hash/3-consistent-hashing.s"
 .PHONY : help
 
 
