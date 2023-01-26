@@ -129,53 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-8-hash/2-bloom-filter.o: 8-hash/2-bloom-filter.cpp.o
-.PHONY : 8-hash/2-bloom-filter.o
+9-ordered-list/1-disjoint-set.o: 9-ordered-list/1-disjoint-set.cpp.o
+.PHONY : 9-ordered-list/1-disjoint-set.o
 
 # target to build an object file
-8-hash/2-bloom-filter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o
-.PHONY : 8-hash/2-bloom-filter.cpp.o
+9-ordered-list/1-disjoint-set.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o
+.PHONY : 9-ordered-list/1-disjoint-set.cpp.o
 
-8-hash/2-bloom-filter.i: 8-hash/2-bloom-filter.cpp.i
-.PHONY : 8-hash/2-bloom-filter.i
-
-# target to preprocess a source file
-8-hash/2-bloom-filter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.i
-.PHONY : 8-hash/2-bloom-filter.cpp.i
-
-8-hash/2-bloom-filter.s: 8-hash/2-bloom-filter.cpp.s
-.PHONY : 8-hash/2-bloom-filter.s
-
-# target to generate assembly for a file
-8-hash/2-bloom-filter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.s
-.PHONY : 8-hash/2-bloom-filter.cpp.s
-
-8-hash/3-consistent-hashing.o: 8-hash/3-consistent-hashing.cpp.o
-.PHONY : 8-hash/3-consistent-hashing.o
-
-# target to build an object file
-8-hash/3-consistent-hashing.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o
-.PHONY : 8-hash/3-consistent-hashing.cpp.o
-
-8-hash/3-consistent-hashing.i: 8-hash/3-consistent-hashing.cpp.i
-.PHONY : 8-hash/3-consistent-hashing.i
+9-ordered-list/1-disjoint-set.i: 9-ordered-list/1-disjoint-set.cpp.i
+.PHONY : 9-ordered-list/1-disjoint-set.i
 
 # target to preprocess a source file
-8-hash/3-consistent-hashing.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.i
-.PHONY : 8-hash/3-consistent-hashing.cpp.i
+9-ordered-list/1-disjoint-set.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.i
+.PHONY : 9-ordered-list/1-disjoint-set.cpp.i
 
-8-hash/3-consistent-hashing.s: 8-hash/3-consistent-hashing.cpp.s
-.PHONY : 8-hash/3-consistent-hashing.s
+9-ordered-list/1-disjoint-set.s: 9-ordered-list/1-disjoint-set.cpp.s
+.PHONY : 9-ordered-list/1-disjoint-set.s
 
 # target to generate assembly for a file
-8-hash/3-consistent-hashing.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.s
-.PHONY : 8-hash/3-consistent-hashing.cpp.s
+9-ordered-list/1-disjoint-set.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.s
+.PHONY : 9-ordered-list/1-disjoint-set.cpp.s
 
 # Help Target
 help:
@@ -186,12 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 8-hash/2-bloom-filter.o"
-	@echo "... 8-hash/2-bloom-filter.i"
-	@echo "... 8-hash/2-bloom-filter.s"
-	@echo "... 8-hash/3-consistent-hashing.o"
-	@echo "... 8-hash/3-consistent-hashing.i"
-	@echo "... 8-hash/3-consistent-hashing.s"
+	@echo "... 9-ordered-list/1-disjoint-set.o"
+	@echo "... 9-ordered-list/1-disjoint-set.i"
+	@echo "... 9-ordered-list/1-disjoint-set.s"
 .PHONY : help
 
 

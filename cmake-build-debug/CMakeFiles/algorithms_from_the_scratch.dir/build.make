@@ -69,47 +69,31 @@ include CMakeFiles/algorithms_from_the_scratch.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/algorithms_from_the_scratch.dir/flags.make
 
-CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o: CMakeFiles/algorithms_from_the_scratch.dir/flags.make
-CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o: /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/8-hash/2-bloom-filter.cpp
-CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o: CMakeFiles/algorithms_from_the_scratch.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o -MF CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o.d -o CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o -c /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/8-hash/2-bloom-filter.cpp
+CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o: CMakeFiles/algorithms_from_the_scratch.dir/flags.make
+CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o: /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/9-ordered-list/1-disjoint-set.cpp
+CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o: CMakeFiles/algorithms_from_the_scratch.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o -MF CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o.d -o CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o -c /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/9-ordered-list/1-disjoint-set.cpp
 
-CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/8-hash/2-bloom-filter.cpp > CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.i
+CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/9-ordered-list/1-disjoint-set.cpp > CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.i
 
-CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/8-hash/2-bloom-filter.cpp -o CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.s
-
-CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o: CMakeFiles/algorithms_from_the_scratch.dir/flags.make
-CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o: /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/8-hash/3-consistent-hashing.cpp
-CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o: CMakeFiles/algorithms_from_the_scratch.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o -MF CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o.d -o CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o -c /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/8-hash/3-consistent-hashing.cpp
-
-CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/8-hash/3-consistent-hashing.cpp > CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.i
-
-CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/8-hash/3-consistent-hashing.cpp -o CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.s
+CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/9-ordered-list/1-disjoint-set.cpp -o CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.s
 
 # Object files for target algorithms_from_the_scratch
 algorithms_from_the_scratch_OBJECTS = \
-"CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o" \
-"CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o"
+"CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o"
 
 # External object files for target algorithms_from_the_scratch
 algorithms_from_the_scratch_EXTERNAL_OBJECTS =
 
-algorithms_from_the_scratch: CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o
-algorithms_from_the_scratch: CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o
+algorithms_from_the_scratch: CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o
 algorithms_from_the_scratch: CMakeFiles/algorithms_from_the_scratch.dir/build.make
 algorithms_from_the_scratch: CMakeFiles/algorithms_from_the_scratch.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable algorithms_from_the_scratch"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable algorithms_from_the_scratch"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/algorithms_from_the_scratch.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

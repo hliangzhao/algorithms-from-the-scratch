@@ -8,8 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/8-hash/2-bloom-filter.cpp" "CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o" "gcc" "CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o.d"
-  "/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/8-hash/3-consistent-hashing.cpp" "CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o" "gcc" "CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o.d"
+  "/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/9-ordered-list/1-disjoint-set.cpp" "CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o" "gcc" "CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o"
-  "CMakeFiles/algorithms_from_the_scratch.dir/8-hash/2-bloom-filter.cpp.o.d"
-  "CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o"
-  "CMakeFiles/algorithms_from_the_scratch.dir/8-hash/3-consistent-hashing.cpp.o.d"
+  "CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o"
+  "CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/1-disjoint-set.cpp.o.d"
   "algorithms_from_the_scratch"
   "algorithms_from_the_scratch.pdb"
 )

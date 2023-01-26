@@ -3,4 +3,4 @@ project(algorithms_from_the_scratch)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(algorithms_from_the_scratch 8-hash/2-bloom-filter.cpp 8-hash/3-consistent-hashing.cpp)
+add_executable(algorithms_from_the_scratch 9-ordered-list/1-disjoint-set.cpp)
