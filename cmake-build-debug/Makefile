@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-9-ordered-list/2-kmp.o: 9-ordered-list/2-kmp.cpp.o
-.PHONY : 9-ordered-list/2-kmp.o
+9-ordered-list/5-monotonic-stack.o: 9-ordered-list/5-monotonic-stack.cpp.o
+.PHONY : 9-ordered-list/5-monotonic-stack.o
 
 # target to build an object file
-9-ordered-list/2-kmp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/2-kmp.cpp.o
-.PHONY : 9-ordered-list/2-kmp.cpp.o
+9-ordered-list/5-monotonic-stack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/5-monotonic-stack.cpp.o
+.PHONY : 9-ordered-list/5-monotonic-stack.cpp.o
 
-9-ordered-list/2-kmp.i: 9-ordered-list/2-kmp.cpp.i
-.PHONY : 9-ordered-list/2-kmp.i
+9-ordered-list/5-monotonic-stack.i: 9-ordered-list/5-monotonic-stack.cpp.i
+.PHONY : 9-ordered-list/5-monotonic-stack.i
 
 # target to preprocess a source file
-9-ordered-list/2-kmp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/2-kmp.cpp.i
-.PHONY : 9-ordered-list/2-kmp.cpp.i
+9-ordered-list/5-monotonic-stack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/5-monotonic-stack.cpp.i
+.PHONY : 9-ordered-list/5-monotonic-stack.cpp.i
 
-9-ordered-list/2-kmp.s: 9-ordered-list/2-kmp.cpp.s
-.PHONY : 9-ordered-list/2-kmp.s
+9-ordered-list/5-monotonic-stack.s: 9-ordered-list/5-monotonic-stack.cpp.s
+.PHONY : 9-ordered-list/5-monotonic-stack.s
 
 # target to generate assembly for a file
-9-ordered-list/2-kmp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/2-kmp.cpp.s
-.PHONY : 9-ordered-list/2-kmp.cpp.s
+9-ordered-list/5-monotonic-stack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/5-monotonic-stack.cpp.s
+.PHONY : 9-ordered-list/5-monotonic-stack.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 9-ordered-list/2-kmp.o"
-	@echo "... 9-ordered-list/2-kmp.i"
-	@echo "... 9-ordered-list/2-kmp.s"
+	@echo "... 9-ordered-list/5-monotonic-stack.o"
+	@echo "... 9-ordered-list/5-monotonic-stack.i"
+	@echo "... 9-ordered-list/5-monotonic-stack.s"
 .PHONY : help
 
 

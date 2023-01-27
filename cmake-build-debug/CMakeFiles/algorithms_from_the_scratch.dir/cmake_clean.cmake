@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/2-kmp.cpp.o"
-  "CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/2-kmp.cpp.o.d"
+  "CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/5-monotonic-stack.cpp.o"
+  "CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/5-monotonic-stack.cpp.o.d"
   "algorithms_from_the_scratch"
   "algorithms_from_the_scratch.pdb"
 )
