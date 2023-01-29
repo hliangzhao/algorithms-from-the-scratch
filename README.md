@@ -9,10 +9,10 @@
 
 基于 [《Essential C++》](https://www.amazon.sg/Essential-C-Stanley-B-Lippman/dp/0201485184) 梳理 C++ 核心知识。
 
-### 1 Complexity, XOR, and Sort
+### 1 Complexity, Bit Operation, and Sort
 
-* 异或运算以及一些妙用；
-* 排序：选择排序、冒泡排序、插入排序；
+* 位运算符的妙用；
+* 基本排序方法：选择排序、冒泡排序、插入排序；
 * 使用对数器对算法进行测试和检验；
 * 使用 C11 风格生成随机数。
 
@@ -63,7 +63,7 @@
 
 ### 8 Hashing
 
-* 理解哈希函数和哈希表的特点与实现；
+* 基于哈希函数和位图的一系列应用；
 * 理解布隆过滤器的使用；
 * 理解一致性哈希。
 
@@ -77,5 +77,5 @@
 
 ### 10 Tree Revisited
 
-* 树型动态规划；
+* 树型动态规划框架；
 * Morris 遍历及其应用（前序、中序、后序遍历以及判定是否为 BST 等）。

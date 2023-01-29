@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/10-tree-revisited/2-morris-traversal.cpp" "CMakeFiles/algorithms_from_the_scratch.dir/10-tree-revisited/2-morris-traversal.cpp.o" "gcc" "CMakeFiles/algorithms_from_the_scratch.dir/10-tree-revisited/2-morris-traversal.cpp.o.d"
+  "/Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/1-complexity-and-sort/1-bit-op.cpp" "CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/1-bit-op.cpp.o" "gcc" "CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/1-bit-op.cpp.o.d"
   )
 
 # Targets to which this target links.

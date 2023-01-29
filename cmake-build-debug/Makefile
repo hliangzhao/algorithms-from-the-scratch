@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-10-tree-revisited/2-morris-traversal.o: 10-tree-revisited/2-morris-traversal.cpp.o
-.PHONY : 10-tree-revisited/2-morris-traversal.o
+1-complexity-and-sort/1-bit-op.o: 1-complexity-and-sort/1-bit-op.cpp.o
+.PHONY : 1-complexity-and-sort/1-bit-op.o
 
 # target to build an object file
-10-tree-revisited/2-morris-traversal.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/10-tree-revisited/2-morris-traversal.cpp.o
-.PHONY : 10-tree-revisited/2-morris-traversal.cpp.o
+1-complexity-and-sort/1-bit-op.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/1-bit-op.cpp.o
+.PHONY : 1-complexity-and-sort/1-bit-op.cpp.o
 
-10-tree-revisited/2-morris-traversal.i: 10-tree-revisited/2-morris-traversal.cpp.i
-.PHONY : 10-tree-revisited/2-morris-traversal.i
+1-complexity-and-sort/1-bit-op.i: 1-complexity-and-sort/1-bit-op.cpp.i
+.PHONY : 1-complexity-and-sort/1-bit-op.i
 
 # target to preprocess a source file
-10-tree-revisited/2-morris-traversal.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/10-tree-revisited/2-morris-traversal.cpp.i
-.PHONY : 10-tree-revisited/2-morris-traversal.cpp.i
+1-complexity-and-sort/1-bit-op.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/1-bit-op.cpp.i
+.PHONY : 1-complexity-and-sort/1-bit-op.cpp.i
 
-10-tree-revisited/2-morris-traversal.s: 10-tree-revisited/2-morris-traversal.cpp.s
-.PHONY : 10-tree-revisited/2-morris-traversal.s
+1-complexity-and-sort/1-bit-op.s: 1-complexity-and-sort/1-bit-op.cpp.s
+.PHONY : 1-complexity-and-sort/1-bit-op.s
 
 # target to generate assembly for a file
-10-tree-revisited/2-morris-traversal.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/10-tree-revisited/2-morris-traversal.cpp.s
-.PHONY : 10-tree-revisited/2-morris-traversal.cpp.s
+1-complexity-and-sort/1-bit-op.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/1-bit-op.cpp.s
+.PHONY : 1-complexity-and-sort/1-bit-op.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 10-tree-revisited/2-morris-traversal.o"
-	@echo "... 10-tree-revisited/2-morris-traversal.i"
-	@echo "... 10-tree-revisited/2-morris-traversal.s"
+	@echo "... 1-complexity-and-sort/1-bit-op.o"
+	@echo "... 1-complexity-and-sort/1-bit-op.i"
+	@echo "... 1-complexity-and-sort/1-bit-op.s"
 .PHONY : help
 
 

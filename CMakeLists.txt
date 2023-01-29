@@ -3,4 +3,4 @@ project(algorithms_from_the_scratch)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(algorithms_from_the_scratch 10-tree-revisited/2-morris-traversal.cpp)
+add_executable(algorithms_from_the_scratch 1-complexity-and-sort/1-bit-op.cpp)
