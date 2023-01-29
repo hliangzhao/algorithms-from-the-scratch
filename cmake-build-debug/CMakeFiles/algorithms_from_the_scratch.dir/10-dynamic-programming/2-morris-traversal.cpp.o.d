@@ -1,5 +1,5 @@
-CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/5-monotonic-stack.cpp.o: \
-  /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/9-ordered-list/5-monotonic-stack.cpp \
+CMakeFiles/algorithms_from_the_scratch.dir/10-dynamic-programming/2-morris-traversal.cpp.o: \
+  /Users/hliangzhao/Documents/GitHub/algorithms-from-the-scratch/10-dynamic-programming/2-morris-traversal.cpp \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/pthread.h \
@@ -221,8 +221,4 @@ CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/5-monotonic-stack.cpp.
   /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/bitset \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__bit_reference \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/stack \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/deque \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__split_buffer \
-  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/vector
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__bit_reference

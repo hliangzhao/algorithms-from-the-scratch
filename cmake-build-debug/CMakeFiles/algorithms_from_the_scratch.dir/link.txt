@@ -1,1 +1,1 @@
-/usr/bin/clang++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/5-monotonic-stack.cpp.o" -o algorithms_from_the_scratch 
+/usr/bin/clang++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/algorithms_from_the_scratch.dir/10-tree-revisited/2-morris-traversal.cpp.o" -o algorithms_from_the_scratch 

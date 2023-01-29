@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-9-ordered-list/5-monotonic-stack.o: 9-ordered-list/5-monotonic-stack.cpp.o
-.PHONY : 9-ordered-list/5-monotonic-stack.o
+10-tree-revisited/2-morris-traversal.o: 10-tree-revisited/2-morris-traversal.cpp.o
+.PHONY : 10-tree-revisited/2-morris-traversal.o
 
 # target to build an object file
-9-ordered-list/5-monotonic-stack.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/5-monotonic-stack.cpp.o
-.PHONY : 9-ordered-list/5-monotonic-stack.cpp.o
+10-tree-revisited/2-morris-traversal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/10-tree-revisited/2-morris-traversal.cpp.o
+.PHONY : 10-tree-revisited/2-morris-traversal.cpp.o
 
-9-ordered-list/5-monotonic-stack.i: 9-ordered-list/5-monotonic-stack.cpp.i
-.PHONY : 9-ordered-list/5-monotonic-stack.i
+10-tree-revisited/2-morris-traversal.i: 10-tree-revisited/2-morris-traversal.cpp.i
+.PHONY : 10-tree-revisited/2-morris-traversal.i
 
 # target to preprocess a source file
-9-ordered-list/5-monotonic-stack.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/5-monotonic-stack.cpp.i
-.PHONY : 9-ordered-list/5-monotonic-stack.cpp.i
+10-tree-revisited/2-morris-traversal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/10-tree-revisited/2-morris-traversal.cpp.i
+.PHONY : 10-tree-revisited/2-morris-traversal.cpp.i
 
-9-ordered-list/5-monotonic-stack.s: 9-ordered-list/5-monotonic-stack.cpp.s
-.PHONY : 9-ordered-list/5-monotonic-stack.s
+10-tree-revisited/2-morris-traversal.s: 10-tree-revisited/2-morris-traversal.cpp.s
+.PHONY : 10-tree-revisited/2-morris-traversal.s
 
 # target to generate assembly for a file
-9-ordered-list/5-monotonic-stack.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/9-ordered-list/5-monotonic-stack.cpp.s
-.PHONY : 9-ordered-list/5-monotonic-stack.cpp.s
+10-tree-revisited/2-morris-traversal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/10-tree-revisited/2-morris-traversal.cpp.s
+.PHONY : 10-tree-revisited/2-morris-traversal.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 9-ordered-list/5-monotonic-stack.o"
-	@echo "... 9-ordered-list/5-monotonic-stack.i"
-	@echo "... 9-ordered-list/5-monotonic-stack.s"
+	@echo "... 10-tree-revisited/2-morris-traversal.o"
+	@echo "... 10-tree-revisited/2-morris-traversal.i"
+	@echo "... 10-tree-revisited/2-morris-traversal.s"
 .PHONY : help
 
 

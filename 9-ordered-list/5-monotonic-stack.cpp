@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include <stack>
+#include <vector>
 
 using namespace std;
 
@@ -153,10 +154,96 @@ void use_mono_stack2(const int *arr, int size, int *left_res, int *right_res) {
 
 /**
  * 问题二：给定一个正数数组，定义指标 A 为数组中累积和与最小值的乘积，返回子数组中指标 A 的最大值。
- * 如果数组本身是该数组的子数组，则该数组最小值乘以该数组元素和就是答案。
+ * 注意，该数组最小值乘以该数组元素和并不是答案！！！不要想当然了。
  *
- * 思路：遍历每一个位置 i，计算以 arr[i] 为最小值且累加和最大的子数组的指标 A，我们想要的 A 一定在这些 A 中。
+ * 为了让复杂度降到 O(n)，我们可以使用单调栈 ——
+ * 遍历每一个位置 i，计算以 arr[i] 为最小值且累加和最大的子数组的指标 A，我们想要的 A 一定在这些 A 中。
+ * 对每个位置 i，如何找到这样的子数组呢？我们可以借助单调栈返回 i 左右两边、离它最近的、小于 arr[i] 的位置。
  * */
+int get_target_val(const int *arr, int size) {
+    /// 先计算前缀和，减少遍历次数
+    int *pre_sum = new int[size];
+    for (int i = 1; i < size; i++) {
+        pre_sum[i] = pre_sum[i - 1] + arr[i];
+    }
+
+    stack<vector<int> *> s;
+    int *left_bounds = new int[size], *right_bounds = new int[size];
+    int global_max = INT_MIN;
+
+    for (int i = 0; i < size; i++) {
+        /// 找到 i 左右两边离它最近的、大于它的元素的位置
+        if (s.empty()) {
+            /// 注意，仍然要主动使用 new，否则插入的 vec 是空的！
+            auto *v = new vector<int>;
+            v->push_back(i);
+            s.push(v);
+        } else {
+            bool non_push = false;
+            while (!s.empty()) {
+                if (arr[i] < arr[(*s.top())[0]]) {
+                    /// 栈顶元素更大，则栈顶弹出，设置栈顶 vec 内全部元素的左边界和右边界
+                    vector<int> *cur = s.top();
+                    s.pop();
+                    for (auto &idx: *cur) {
+                        if (!s.empty()) {
+                            /// 这里很关键，是最近的元素的索引，因此是 vec 中的最后一个
+                            left_bounds[idx] = (*s.top())[s.top()->size() - 1];
+                        } else {
+                            left_bounds[idx] = -1;
+                        }
+                        right_bounds[idx] = i;
+
+                        /// 每设置完一个就计算一下（直接利用前缀和计算子数组元素和）
+                        int cur_res = left_bounds[idx] == -1 ? pre_sum[right_bounds[idx] - 1] * arr[idx] :
+                                      (pre_sum[right_bounds[idx] - 1] - pre_sum[left_bounds[idx]]) * arr[idx];
+                        global_max = max(global_max, cur_res);
+                    }
+                    non_push = true;
+                } else if (arr[i] > arr[(*s.top())[0]]) {
+                    /// 栈顶元素小，i 直接入栈
+                    auto *v = new vector<int>;
+                    v->push_back(i);
+                    s.push(v);
+                    break;
+                } else {
+                    /// 栈顶元素和 i 相等，i 链接到栈顶元素最后
+                    vector<int> *cur = s.top();
+                    cur->push_back(i);
+                    break;
+                }
+            }
+            if (s.empty() && non_push) {
+                auto *v = new vector<int>;
+                v->push_back(i);
+                s.push(v);
+            }
+        }
+    }
+    while (!s.empty()) {
+        vector<int> *cur = s.top();
+        s.pop();
+        for (auto &idx: *cur) {
+            if (!s.empty()) {
+                /// 这里很关键，是最近的元素的索引，因此是 vec 中的最后一个
+                left_bounds[idx] = (*s.top())[s.top()->size() - 1];
+            } else {
+                left_bounds[idx] = -1;
+            }
+            /// 这里很关键，右边界若不存在，应当设为 size
+            right_bounds[idx] = size;
+
+            /// 每设置完一个就计算一下（直接利用前缀和计算子数组元素和）
+            int cur_res = left_bounds[idx] == -1 ? pre_sum[right_bounds[idx] - 1] * arr[idx] :
+                          (pre_sum[right_bounds[idx] - 1] - pre_sum[left_bounds[idx]]) * arr[idx];
+            global_max = max(global_max, cur_res);
+        }
+    }
+//    for (int i = 0; i < size; i++) {
+//        cout << "(" << left_bounds[i] << ", " << right_bounds[i] << ")" << endl;
+//    }
+    return global_max;
+}
 
 int main() {
     int arr[] = {5, 4, 3, 6, 1, 2, 0};
@@ -183,6 +270,10 @@ int main() {
         cout << "(" << left_res3[i] << ", " << right_res3[i] << ")\n";
     }
     cout << endl;
+
+    int arr4[] = {5, 3, 2, 1, 6, 6, 7, 4};
+    int size4 = 8;
+    cout << get_target_val(arr4, size4) << endl;
 
     return 0;
 }
