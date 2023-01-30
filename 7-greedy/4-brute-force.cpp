@@ -265,14 +265,14 @@ int play_card(const int *arr, int size) {
  * 下面给出问题四的正确解法。
  * */
 
-int card_f(const int *arr, int l, int r);
+int f1(const int *arr, int l, int r);
 
-int card_s(const int *arr, int l, int r);
+int s1(const int *arr, int l, int r);
 
 /**
  * 先手函数
  * */
-int card_f(const int *arr, int l, int r) {
+int f1(const int *arr, int l, int r) {
     if (l == r) {
         return arr[l];
     }
@@ -282,7 +282,7 @@ int card_f(const int *arr, int l, int r) {
 /**
  * 后手函数
  * */
-int card_s(const int *arr, int l, int r) {
+int s1(const int *arr, int l, int r) {
     if (l == r) {
         return 0;
     }
@@ -290,7 +290,7 @@ int card_s(const int *arr, int l, int r) {
     return min(card_f(arr, l + 1, r), card_f(arr, l, r - 1));
 }
 
-int winner_score(const int *arr, int size) {
+int winner_score1(const int *arr, int size) {
     /// 返回 A 和 B 中分数高的
     return max(card_f(arr, 0, size - 1), card_s(arr, 0, size - 1));
 }

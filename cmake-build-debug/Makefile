@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-1-complexity-and-sort/1-bit-op.o: 1-complexity-and-sort/1-bit-op.cpp.o
-.PHONY : 1-complexity-and-sort/1-bit-op.o
+11-dynamic-programming/1-dp.o: 11-dynamic-programming/1-dp.cpp.o
+.PHONY : 11-dynamic-programming/1-dp.o
 
 # target to build an object file
-1-complexity-and-sort/1-bit-op.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/1-bit-op.cpp.o
-.PHONY : 1-complexity-and-sort/1-bit-op.cpp.o
+11-dynamic-programming/1-dp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/11-dynamic-programming/1-dp.cpp.o
+.PHONY : 11-dynamic-programming/1-dp.cpp.o
 
-1-complexity-and-sort/1-bit-op.i: 1-complexity-and-sort/1-bit-op.cpp.i
-.PHONY : 1-complexity-and-sort/1-bit-op.i
+11-dynamic-programming/1-dp.i: 11-dynamic-programming/1-dp.cpp.i
+.PHONY : 11-dynamic-programming/1-dp.i
 
 # target to preprocess a source file
-1-complexity-and-sort/1-bit-op.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/1-bit-op.cpp.i
-.PHONY : 1-complexity-and-sort/1-bit-op.cpp.i
+11-dynamic-programming/1-dp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/11-dynamic-programming/1-dp.cpp.i
+.PHONY : 11-dynamic-programming/1-dp.cpp.i
 
-1-complexity-and-sort/1-bit-op.s: 1-complexity-and-sort/1-bit-op.cpp.s
-.PHONY : 1-complexity-and-sort/1-bit-op.s
+11-dynamic-programming/1-dp.s: 11-dynamic-programming/1-dp.cpp.s
+.PHONY : 11-dynamic-programming/1-dp.s
 
 # target to generate assembly for a file
-1-complexity-and-sort/1-bit-op.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/1-bit-op.cpp.s
-.PHONY : 1-complexity-and-sort/1-bit-op.cpp.s
+11-dynamic-programming/1-dp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/11-dynamic-programming/1-dp.cpp.s
+.PHONY : 11-dynamic-programming/1-dp.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 1-complexity-and-sort/1-bit-op.o"
-	@echo "... 1-complexity-and-sort/1-bit-op.i"
-	@echo "... 1-complexity-and-sort/1-bit-op.s"
+	@echo "... 11-dynamic-programming/1-dp.o"
+	@echo "... 11-dynamic-programming/1-dp.i"
+	@echo "... 11-dynamic-programming/1-dp.s"
 .PHONY : help
 
 

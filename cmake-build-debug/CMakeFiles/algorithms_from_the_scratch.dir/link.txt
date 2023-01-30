@@ -1,1 +1,1 @@
-/usr/bin/clang++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/1-bit-op.cpp.o" -o algorithms_from_the_scratch 
+/usr/bin/clang++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/algorithms_from_the_scratch.dir/11-dynamic-programming/1-dp.cpp.o" -o algorithms_from_the_scratch 
