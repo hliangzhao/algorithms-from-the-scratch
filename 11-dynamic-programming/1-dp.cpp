@@ -623,7 +623,8 @@ int main() {
     ed = ::clock();
     cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
 
-    int arr[] = {2, 7, 3, 5, 2, 100, 7, 9, 2, 78, 257, 12, 123, 34, 23, 1};
+    int arr[] = {2, 7, 3, 5, 2, 100, 7, 9, 2, 78, 257, 12,
+                 123, 34, 23, 1};
     int size = 16, aim = 24;
     st = ::clock();
     cout << least_coins(arr, size, aim) << endl;
