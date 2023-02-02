@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-12-ordered-list/1-ordered-list.o: 12-ordered-list/1-ordered-list.cpp.o
-.PHONY : 12-ordered-list/1-ordered-list.o
+11-dynamic-programming/1-dp.o: 11-dynamic-programming/1-dp.cpp.o
+.PHONY : 11-dynamic-programming/1-dp.o
 
 # target to build an object file
-12-ordered-list/1-ordered-list.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/12-ordered-list/1-ordered-list.cpp.o
-.PHONY : 12-ordered-list/1-ordered-list.cpp.o
+11-dynamic-programming/1-dp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/11-dynamic-programming/1-dp.cpp.o
+.PHONY : 11-dynamic-programming/1-dp.cpp.o
 
-12-ordered-list/1-ordered-list.i: 12-ordered-list/1-ordered-list.cpp.i
-.PHONY : 12-ordered-list/1-ordered-list.i
+11-dynamic-programming/1-dp.i: 11-dynamic-programming/1-dp.cpp.i
+.PHONY : 11-dynamic-programming/1-dp.i
 
 # target to preprocess a source file
-12-ordered-list/1-ordered-list.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/12-ordered-list/1-ordered-list.cpp.i
-.PHONY : 12-ordered-list/1-ordered-list.cpp.i
+11-dynamic-programming/1-dp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/11-dynamic-programming/1-dp.cpp.i
+.PHONY : 11-dynamic-programming/1-dp.cpp.i
 
-12-ordered-list/1-ordered-list.s: 12-ordered-list/1-ordered-list.cpp.s
-.PHONY : 12-ordered-list/1-ordered-list.s
+11-dynamic-programming/1-dp.s: 11-dynamic-programming/1-dp.cpp.s
+.PHONY : 11-dynamic-programming/1-dp.s
 
 # target to generate assembly for a file
-12-ordered-list/1-ordered-list.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/12-ordered-list/1-ordered-list.cpp.s
-.PHONY : 12-ordered-list/1-ordered-list.cpp.s
+11-dynamic-programming/1-dp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/11-dynamic-programming/1-dp.cpp.s
+.PHONY : 11-dynamic-programming/1-dp.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 12-ordered-list/1-ordered-list.o"
-	@echo "... 12-ordered-list/1-ordered-list.i"
-	@echo "... 12-ordered-list/1-ordered-list.s"
+	@echo "... 11-dynamic-programming/1-dp.o"
+	@echo "... 11-dynamic-programming/1-dp.i"
+	@echo "... 11-dynamic-programming/1-dp.s"
 .PHONY : help
 
 

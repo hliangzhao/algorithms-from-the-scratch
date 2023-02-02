@@ -623,66 +623,66 @@ int main() {
     ed = ::clock();
     cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
 
-    int arr[] = {2, 7, 3, 5, 2, 100, 7, 9, 2, 78, 257, 12,
-                 123, 34, 23, 1};
-    int size = 16, aim = 24;
-    st = ::clock();
-    cout << least_coins(arr, size, aim) << endl;
-    ed = ::clock();
-    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
-
-    st = ::clock();
-    cout << least_coins_memorized(arr, size, aim) << endl;
-    ed = ::clock();
-    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
-
-    st = ::clock();
-    cout << least_coins_dp(arr, size, aim) << endl;
-    ed = ::clock();
-    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
-
-    int arr2[] = {1, 2, 100, 4};
-    cout << winner_score1(arr2, 4) << endl;
-    cout << winner_score_dp(arr2, 4) << endl;
-
-    st = ::clock();
-    cout << horse(1, 1, 8) << endl;
-    ed = ::clock();
-    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
-
-    st = ::clock();
-    cout << horse_dp(1, 1, 8) << endl;
-    ed = ::clock();
-    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
-
-    int n2 = 20, m2 = 30, a2 = 2, b2 = 2, step2 = 12;
-
-    st = ::clock();
-    cout << mission(n2, m2, a2, b2, step2) << endl;
-    ed = ::clock();
-    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
-
-    st = ::clock();
-    cout << mission_dp(n2, m2, a2, b2, step2) << endl;
-    ed = ::clock();
-    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
-
-    int arr3[] = {1, 100, 3, 5, 10, 9, 234, 90, 123};
-    int size3 = 9, aim3 = 123;
-    st = ::clock();
-    cout << combine_of_coins(arr3, size3, aim3) << endl;
-    ed = ::clock();
-    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
-
-    st = ::clock();
-    cout << combine_of_coins_dp(arr3, size3, aim3) << endl;
-    ed = ::clock();
-    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
-
-    st = ::clock();
-    cout << combine_of_coins_dp2(arr3, size3, aim3) << endl;
-    ed = ::clock();
-    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
+//    int arr[] = {2, 7, 3, 5, 2, 100, 7, 9, 2, 78, 257, 12,
+//                 123, 34, 23, 1};
+//    int size = 16, aim = 24;
+//    st = ::clock();
+//    cout << least_coins(arr, size, aim) << endl;
+//    ed = ::clock();
+//    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
+//
+//    st = ::clock();
+//    cout << least_coins_memorized(arr, size, aim) << endl;
+//    ed = ::clock();
+//    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
+//
+//    st = ::clock();
+//    cout << least_coins_dp(arr, size, aim) << endl;
+//    ed = ::clock();
+//    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
+//
+//    int arr2[] = {1, 2, 100, 4};
+//    cout << winner_score1(arr2, 4) << endl;
+//    cout << winner_score_dp(arr2, 4) << endl;
+//
+//    st = ::clock();
+//    cout << horse(1, 1, 8) << endl;
+//    ed = ::clock();
+//    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
+//
+//    st = ::clock();
+//    cout << horse_dp(1, 1, 8) << endl;
+//    ed = ::clock();
+//    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
+//
+//    int n2 = 20, m2 = 30, a2 = 2, b2 = 2, step2 = 12;
+//
+//    st = ::clock();
+//    cout << mission(n2, m2, a2, b2, step2) << endl;
+//    ed = ::clock();
+//    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
+//
+//    st = ::clock();
+//    cout << mission_dp(n2, m2, a2, b2, step2) << endl;
+//    ed = ::clock();
+//    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
+//
+//    int arr3[] = {1, 100, 3, 5, 10, 9, 234, 90, 123};
+//    int size3 = 9, aim3 = 123;
+//    st = ::clock();
+//    cout << combine_of_coins(arr3, size3, aim3) << endl;
+//    ed = ::clock();
+//    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
+//
+//    st = ::clock();
+//    cout << combine_of_coins_dp(arr3, size3, aim3) << endl;
+//    ed = ::clock();
+//    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
+//
+//    st = ::clock();
+//    cout << combine_of_coins_dp2(arr3, size3, aim3) << endl;
+//    ed = ::clock();
+//    cout << "finished in " << (double) (ed - st) / CLOCKS_PER_SEC * 1e3 << "ms" << endl;
 
     return 0;
 }

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/algorithms_from_the_scratch.dir/12-ordered-list/1-ordered-list.cpp.o"
-  "CMakeFiles/algorithms_from_the_scratch.dir/12-ordered-list/1-ordered-list.cpp.o.d"
+  "CMakeFiles/algorithms_from_the_scratch.dir/11-dynamic-programming/1-dp.cpp.o"
+  "CMakeFiles/algorithms_from_the_scratch.dir/11-dynamic-programming/1-dp.cpp.o.d"
   "algorithms_from_the_scratch"
   "algorithms_from_the_scratch.pdb"
 )

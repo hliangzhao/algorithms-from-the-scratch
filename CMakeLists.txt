@@ -3,4 +3,4 @@ project(algorithms_from_the_scratch)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(algorithms_from_the_scratch 12-ordered-list/1-ordered-list.cpp)
+add_executable(algorithms_from_the_scratch 11-dynamic-programming/1-dp.cpp)
