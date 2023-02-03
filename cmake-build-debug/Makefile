@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-11-dynamic-programming/1-dp.o: 11-dynamic-programming/1-dp.cpp.o
-.PHONY : 11-dynamic-programming/1-dp.o
+13-practice/part-3.o: 13-practice/part-3.cpp.o
+.PHONY : 13-practice/part-3.o
 
 # target to build an object file
-11-dynamic-programming/1-dp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/11-dynamic-programming/1-dp.cpp.o
-.PHONY : 11-dynamic-programming/1-dp.cpp.o
+13-practice/part-3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-3.cpp.o
+.PHONY : 13-practice/part-3.cpp.o
 
-11-dynamic-programming/1-dp.i: 11-dynamic-programming/1-dp.cpp.i
-.PHONY : 11-dynamic-programming/1-dp.i
+13-practice/part-3.i: 13-practice/part-3.cpp.i
+.PHONY : 13-practice/part-3.i
 
 # target to preprocess a source file
-11-dynamic-programming/1-dp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/11-dynamic-programming/1-dp.cpp.i
-.PHONY : 11-dynamic-programming/1-dp.cpp.i
+13-practice/part-3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-3.cpp.i
+.PHONY : 13-practice/part-3.cpp.i
 
-11-dynamic-programming/1-dp.s: 11-dynamic-programming/1-dp.cpp.s
-.PHONY : 11-dynamic-programming/1-dp.s
+13-practice/part-3.s: 13-practice/part-3.cpp.s
+.PHONY : 13-practice/part-3.s
 
 # target to generate assembly for a file
-11-dynamic-programming/1-dp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/11-dynamic-programming/1-dp.cpp.s
-.PHONY : 11-dynamic-programming/1-dp.cpp.s
+13-practice/part-3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-3.cpp.s
+.PHONY : 13-practice/part-3.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 11-dynamic-programming/1-dp.o"
-	@echo "... 11-dynamic-programming/1-dp.i"
-	@echo "... 11-dynamic-programming/1-dp.s"
+	@echo "... 13-practice/part-3.o"
+	@echo "... 13-practice/part-3.i"
+	@echo "... 13-practice/part-3.s"
 .PHONY : help
 
 

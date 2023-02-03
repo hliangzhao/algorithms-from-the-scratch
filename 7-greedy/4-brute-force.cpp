@@ -276,7 +276,7 @@ int f1(const int *arr, int l, int r) {
     if (l == r) {
         return arr[l];
     }
-    return max(arr[l] + card_s(arr, l + 1, r), arr[r] + card_s(arr, l, r - 1));
+    return max(arr[l] + s1(arr, l + 1, r), arr[r] + s1(arr, l, r - 1));
 }
 
 /**
@@ -287,12 +287,12 @@ int s1(const int *arr, int l, int r) {
         return 0;
     }
     /// 对方绝顶聪明，因此总会把差的情况留给我
-    return min(card_f(arr, l + 1, r), card_f(arr, l, r - 1));
+    return min(f1(arr, l + 1, r), f1(arr, l, r - 1));
 }
 
 int winner_score1(const int *arr, int size) {
     /// 返回 A 和 B 中分数高的
-    return max(card_f(arr, 0, size - 1), card_s(arr, 0, size - 1));
+    return max(f1(arr, 0, size - 1), s1(arr, 0, size - 1));
 }
 
 // --------------------------------------------------------------------------------
