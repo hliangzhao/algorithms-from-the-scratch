@@ -74,7 +74,7 @@ void find_two_nums(const int *arr, int size) {
 /**
  * 题目二的正确解法 —— 这个方法时间复杂度是 O(n)，满足要求。
  * */
-void find_two_nums_faster(const int *arr, int size) {
+void find_two_nums2(const int *arr, int size) {
     if (arr == nullptr) {
         std::exit(1);
     }
@@ -288,7 +288,7 @@ int main() {
     int arr4[12] = {1, -123, 15, -123, 15, 78,
                     -123, -123, 15, 15, 15, 15};
     find_two_nums(arr3, 12);
-    find_two_nums_faster(arr4, 12);
+    find_two_nums2(arr4, 12);
 
     cout << 0b01010101010101010101010101010101 << " " << 0x55555555 << endl;
 

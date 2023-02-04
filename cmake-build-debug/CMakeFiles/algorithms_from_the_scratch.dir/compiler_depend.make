@@ -226,8 +226,11 @@ CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-3.cpp.o: /Users/hlia
   /Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/stack \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/deque \
-  /Library/Developer/CommandLineTools/usr/include/c++/v1/__split_buffer
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/__split_buffer \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/iomanip
 
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iomanip:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/__split_buffer:
 

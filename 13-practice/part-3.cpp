@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include <stack>
+#include <iomanip>
 
 using namespace std;
 
@@ -162,7 +163,7 @@ int max_sum2(Node *root) {
 }
 
 /**
- * 解法二：传统方法
+ * 问题三解法二：传统方法
  *
  * 这是一个先序遍历
  * */
@@ -213,6 +214,322 @@ bool is_aim_in(int **mat, int size1, int size2, int aim) {
     return false;
 }
 
+// --------------------------------------------------------------------------------------------------------------
+
+/**
+ * 问题五：给定一个非负整数数组，每个元素代表每个位置上物品的个数。每个物品可以在相邻的位置上移动。
+ * 计算在最小移动轮数的前提下，使得每个位置上的物品数量相同。如果无法做到，返回 -1。
+ *
+ * e.g. [1, 0, 5]:
+ * 1 0 <-- 5 得到 1 1 4
+ * 1 <-- 1 <-- 4 得到 2 1 3
+ * 2 1 <-- 3 得到 2 2 2
+ * 返回 3。
+ * */
+
+/**
+ * 错解！！！
+ * */
+bool equal(const int *arr, int size) {
+    int val = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] != val) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int get_max(const int *arr, int size) {
+    int res = arr[0];
+    int idx = 0;
+    for (int i = 1; i < size; i++) {
+        if (res < arr[i]) {
+            idx = i;
+            res = arr[i];
+        }
+    }
+    return idx;
+}
+
+int get_min(const int *arr, int size) {
+    int res = arr[0];
+    int idx = 0;
+    for (int i = 1; i < size; i++) {
+        if (arr[i] < res) {
+            idx = i;
+            res = arr[i];
+        }
+    }
+    return idx;
+}
+
+int move(int *arr, int size) {
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    if (sum % size != 0) {
+        return -1;
+    }
+    int ans = 0;
+    while (!equal(arr, size)) {
+        int min_idx = get_min(arr, size);
+        int max_idx = get_max(arr, size);
+        arr[min_idx]++;
+        arr[max_idx]--;
+        ans++;
+    }
+    return ans;
+}
+
+int get_sum(const int *arr, int start, int end) {
+    int ans = 0;
+    for (int i = start; i < end; i++) {
+        ans += arr[i];
+    }
+    return ans;
+}
+
+/**
+ * 正确解法（贪心）。
+ * 分析每个位置左右两侧各需要多少，找到最大的瓶颈。
+ * */
+int move2(const int *arr, int size) {
+    int sum = get_sum(arr, 0, size);
+    if (sum % size != 0) {
+        return -1;
+    }
+    int aver = sum / size;
+    int final;
+    int ans;
+    int left_sum = 0;
+    for (int i = 0; i < size; i++) {
+        int left_out = left_sum - aver * i;
+        int right_out = (sum - left_sum - arr[i]) - aver * (size - i - 1);
+        if (left_out < 0 && right_out < 0) {
+            ans = -left_out - right_out;
+        } else {
+            ans = max(abs(left_out), abs(right_out));
+        }
+        if (ans > final) {
+            final = ans;
+        }
+        left_sum += arr[i];
+    }
+    return final;
+}
+
+// --------------------------------------------------------------------------------------------------------------
+
+/**
+ * 问题六：使用 zigzag 的方式打印矩阵。
+ * 0 1 2 3
+ * 4 5 6 7
+ * 8 9 10 11
+ *
+ * 打印 0 1 4 8 5 2 3 6 9 10 7 11
+ * */
+void zigzag(int **mat, int width, int height) {
+    int i = 0, j = 0;
+    cout << mat[i][j] << " ";
+    while (true) {
+        /// 前半部分往右走一步，后半部分往下走一步
+        if (j + 1 < height) {
+            j++;
+        } else {
+            i++;
+        }
+        if (i == width - 1 && j == height - 1) {
+            cout << mat[i][j] << " ";
+            break;
+        }
+        /// 往左下走
+        while (i + 1 < width && j - 1 >= 0) {
+            cout << mat[i][j] << " ";
+            i++;
+            j--;
+        }
+        cout << mat[i][j] << " ";
+        /// 前半部分往下走一步，后半部分往右走一步
+        if (i + 1 < width) {
+            i++;
+        } else {
+            j++;
+        }
+        /// 往右上走
+        while (i - 1 >= 0 && j + 1 < height) {
+            cout << mat[i][j] << " ";
+            i--;
+            j++;
+        }
+        cout << mat[i][j] << " ";
+    }
+}
+
+// --------------------------------------------------------------------------------------------------------------
+
+/**
+ * 问题七：蛇形填数
+ * 0 1 2 3
+ * 4 5 6 7
+ * 8 9 10 11
+ *
+ * 打印 0 1 2 3 7 11 10 9 8 4 5 6
+ *
+ * 本函数会改变传入的 mat，如果题目不允许，先复制 mat。
+ * */
+void snake(int **mat, int width, int height) {
+    int i = 0, j = 0;
+    while (true) {
+        while (j < height && mat[i][j] != -1) {
+            cout << mat[i][j] << " ";
+            mat[i][j] = -1;
+            j++;
+        }
+        j -= 1;
+        i += 1;
+        while (i < width && mat[i][j] != -1) {
+            cout << mat[i][j] << " ";
+            mat[i][j] = -1;
+            i++;
+        }
+        i -= 1;
+        j -= 1;
+        while (j >= 0 && mat[i][j] != -1) {
+            cout << mat[i][j] << " ";
+            mat[i][j] = -1;
+            j--;
+        }
+        j += 1;
+        i -= 1;
+        while (i >= 0 && mat[i][j] != -1) {
+            cout << mat[i][j] << " ";
+            mat[i][j] = -1;
+            i--;
+        }
+        i += 1;
+        j += 1;
+        bool unfinished = false;
+        for (int pi = 0; pi < width; pi++) {
+            for (int pj = 0; pj < height; pj++) {
+                if (mat[pi][pj] != -1) {
+                    unfinished = true;
+                    break;
+                }
+            }
+            if (unfinished) {
+                break;
+            }
+        }
+        if (!unfinished) {
+            break;
+        }
+    }
+}
+
+/**
+ * 问题七解法二：从整体到局部
+ * */
+
+/**
+ * 子程序：打印从 (a,b) 到 (c,d) 的边
+ * */
+void print_edge(int **mat, int a, int b, int c, int d) {
+    if (a == c) {
+        /// 一条水平线
+        for (int j = b; j <= d; j++) {
+            cout << mat[a][j] << " ";
+        }
+    } else if (b == d) {
+        for (int i = a; i <= c; i++) {
+            cout << mat[i][b] << " ";
+        }
+    } else {
+        int cur_col = b, cur_row = a;
+        while (cur_col != d) {
+            cout << mat[a][cur_col] << " ";
+            cur_col++;
+        }
+        while (cur_row != c) {
+            cout << mat[cur_row][d] << " ";
+            cur_row++;
+        }
+        while (cur_col != b) {
+            cout << mat[c][cur_col] << " ";
+            cur_col--;
+        }
+        while (cur_row != a) {
+            cout << mat[cur_row][b] << " ";
+            cur_row--;
+        }
+    }
+}
+
+void snake2(int **mat, int width, int height) {
+    int a = 0, b = 0;
+    int c = width - 1, d = height - 1;
+    while (a <= c && b <= d) {
+        print_edge(mat, a, b, c, d);
+        a++;
+        b++;
+        c--;
+        d--;
+    }
+}
+
+// --------------------------------------------------------------------------------------------------------------
+
+/**
+ * 问题八：只用有限几个变量，实现矩阵中每个位置的数顺时针转动 90 度。
+ *
+ * 0  1  2  3
+ * 4  5  6  7
+ * 8  9 10 11
+ * 12 13 14 15
+ *
+ * \to
+ *
+ * 12  8  4  0
+ * 13  9  5  1
+ * 14 10  6  2
+ * 15 11  7  3
+ *
+ * 思路：从整体到局部。外面一圈转完之后不可能有元素转到里面去。因此，可以从外到内一圈一圈地去考虑。
+ * 对于每一圈，将其上的元素分组，每一组内部的元素交换位置。
+ * */
+
+void rotate_edge(int **mat, int a, int b, int c, int d) {
+    int tmp;
+    for (int grp_idx = 0; grp_idx != d - b; grp_idx++) {
+        tmp = mat[a][b + grp_idx];
+        mat[a][b + grp_idx] = mat[c - grp_idx][b];
+        mat[c - grp_idx][b] = mat[c][d - grp_idx];
+        mat[c][d - grp_idx] = mat[a + grp_idx][c];
+        mat[a + grp_idx][c] = tmp;
+    }
+}
+
+void rotate(int **mat, int width, int height) {
+    int a = 0, b = 0;
+    int c = width - 1, d = height - 1;
+    while (a <= c && b <= d) {
+        rotate_edge(mat, a, b, c, d);
+        a++;
+        b++;
+        c--;
+        d--;
+    }
+    for (int i = 0; i < width; i++) {
+        for (int j = 0; j < height; j++) {
+            cout << setw(3) << mat[i][j];
+        }
+        cout << endl;
+    }
+}
+
+// --------------------------------------------------------------------------------------------------------------
+
 int main() {
 //    stack<int> s;
 //    s.push(5);
@@ -239,24 +556,58 @@ int main() {
 //    cout << max_sum(root) << endl;
 //    cout << max_sum2(root) << endl;
 //    cout << max_sum3(root) << endl;
+//
+//    int **mat = new int *[3];
+//    for (int i = 0; i <3; i++) {
+//        mat[i] = new int[4];
+//    }
+//    mat[0][0] = 1;
+//    mat[0][1] = 5;
+//    mat[0][2] = 9;
+//    mat[0][3] = 10;
+//    mat[1][0] = 2;
+//    mat[1][1] = 6;
+//    mat[1][2] = 11;
+//    mat[1][3] = 13;
+//    mat[2][0] = 7;
+//    mat[2][1] = 9;
+//    mat[2][2] = 15;
+//    mat[2][3] = 17;
+//    cout << is_aim_in(mat, 3, 4, 7) << endl;
+//
+//    int arr[] = {100, 0, 0, 0};
+//    cout << move2(arr, 4) << endl;
+//
+//    int **mat2 = new int *[4];
+//    for (int i = 0; i < 4; i++) {
+//        mat2[i] = new int[5];
+//        for (int j = 0; j < 5; j++) {
+//            mat2[i][j] = 5 * i + j;
+//        }
+//    }
+//    zigzag(mat2, 4, 5);
+//    cout << endl;
+//    snake2(mat2, 3, 4);
+//    cout << endl;
+//    snake(mat2, 3, 4);
+//    cout << endl;
 
-    int **mat = new int *[3];
-    for (int i = 0; i <3; i++) {
-        mat[i] = new int[4];
+    int **mat3 = new int *[4];
+    for (int i = 0; i < 4; i++) {
+        mat3[i] = new int[4];
+        for (int j = 0; j < 4; j++) {
+            mat3[i][j] = 4 * i + j;
+        }
     }
-    mat[0][0] = 1;
-    mat[0][1] = 5;
-    mat[0][2] = 9;
-    mat[0][3] = 10;
-    mat[1][0] = 2;
-    mat[1][1] = 6;
-    mat[1][2] = 11;
-    mat[1][3] = 13;
-    mat[2][0] = 7;
-    mat[2][1] = 9;
-    mat[2][2] = 15;
-    mat[2][3] = 17;
-    cout << is_aim_in(mat, 3, 4, 7) << endl;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            cout << setw(3) << mat3[i][j];
+        }
+        cout << endl;
+    }
+    cout << endl;
+    rotate(mat3, 4, 4);
+    cout << endl;
 
     return 0;
 }
