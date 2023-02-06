@@ -367,6 +367,44 @@ void zigzag(int **mat, int width, int height) {
     }
 }
 
+/**
+ * 问题六解法二：从整体到局部。
+ *
+ * 两个点分别从左上角出发，一个往下，一个往右，然后编写一个子程序实现打印这两个点之间的斜线（左下到右上或者右上到左下）。
+ * */
+
+void print_slash(int **mat, int a, int b, int c, int d, bool direction) {
+    if (direction) {
+        while (a != c + 1) {
+            cout << mat[a++][b--] << " ";
+        }
+    } else {
+        while (c != a - 1) {
+            cout << mat[c--][d++] << " ";
+        }
+    }
+}
+
+void zigzag2(int **mat, int width, int height) {
+    int a = 0, b = 0;
+    int c = 0, d = 0;
+    int end_x = width - 1, end_y = height - 1;
+    bool up2down = false;
+    while (a != end_x + 1) {
+        print_slash(mat, a, b, c, d, up2down);
+
+        /// 先更新 a，再更新 b
+        a = b == end_y ? a + 1 : a;
+        b = b == end_y ? b : b + 1;
+
+        /// 先更新 d，再更新 c
+        d = c == end_x ? d + 1 : d;
+        c = c == end_x ? c : c + 1;
+        up2down = !up2down;
+    }
+    cout << endl;
+}
+
 // --------------------------------------------------------------------------------------------------------------
 
 /**
@@ -578,36 +616,38 @@ int main() {
 //    int arr[] = {100, 0, 0, 0};
 //    cout << move2(arr, 4) << endl;
 //
-//    int **mat2 = new int *[4];
-//    for (int i = 0; i < 4; i++) {
-//        mat2[i] = new int[5];
-//        for (int j = 0; j < 5; j++) {
-//            mat2[i][j] = 5 * i + j;
-//        }
-//    }
-//    zigzag(mat2, 4, 5);
-//    cout << endl;
+    int **mat2 = new int *[4];
+    for (int i = 0; i < 4; i++) {
+        mat2[i] = new int[5];
+        for (int j = 0; j < 5; j++) {
+            mat2[i][j] = 5 * i + j;
+        }
+    }
+    zigzag(mat2, 4, 5);
+    cout << endl;
+    zigzag2(mat2, 4, 5);
+    cout << endl;
 //    snake2(mat2, 3, 4);
 //    cout << endl;
 //    snake(mat2, 3, 4);
 //    cout << endl;
-
-    int **mat3 = new int *[4];
-    for (int i = 0; i < 4; i++) {
-        mat3[i] = new int[4];
-        for (int j = 0; j < 4; j++) {
-            mat3[i][j] = 4 * i + j;
-        }
-    }
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            cout << setw(3) << mat3[i][j];
-        }
-        cout << endl;
-    }
-    cout << endl;
-    rotate(mat3, 4, 4);
-    cout << endl;
+//
+//    int **mat3 = new int *[4];
+//    for (int i = 0; i < 4; i++) {
+//        mat3[i] = new int[4];
+//        for (int j = 0; j < 4; j++) {
+//            mat3[i][j] = 4 * i + j;
+//        }
+//    }
+//    for (int i = 0; i < 4; i++) {
+//        for (int j = 0; j < 4; j++) {
+//            cout << setw(3) << mat3[i][j];
+//        }
+//        cout << endl;
+//    }
+//    cout << endl;
+//    rotate(mat3, 4, 4);
+//    cout << endl;
 
     return 0;
 }

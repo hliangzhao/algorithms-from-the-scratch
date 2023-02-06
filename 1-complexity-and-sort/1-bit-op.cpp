@@ -290,11 +290,13 @@ int main() {
     find_two_nums(arr3, 12);
     find_two_nums2(arr4, 12);
 
-    cout << 0b01010101010101010101010101010101 << " " << 0x55555555 << endl;
+//    cout << 0b01010101010101010101010101010101 << " " << 0x55555555 << endl;
+//
+//    cout << my_multi(7, 9) << endl;
+//    cout << my_multi(-7, 8) << endl;
+//    cout << proc_of_my_divide(-57, 6) << endl;
 
-    cout << my_multi(7, 9) << endl;
-    cout << my_multi(-7, 8) << endl;
-    cout << proc_of_my_divide(-57, 6) << endl;
+    cout <<
 
     return 0;
 }
