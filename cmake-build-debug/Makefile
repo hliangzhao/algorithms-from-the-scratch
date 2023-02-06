@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-13-practice/part-4.o: 13-practice/part-4.cpp.o
-.PHONY : 13-practice/part-4.o
+13-practice/part-5.o: 13-practice/part-5.cpp.o
+.PHONY : 13-practice/part-5.o
 
 # target to build an object file
-13-practice/part-4.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-4.cpp.o
-.PHONY : 13-practice/part-4.cpp.o
+13-practice/part-5.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-5.cpp.o
+.PHONY : 13-practice/part-5.cpp.o
 
-13-practice/part-4.i: 13-practice/part-4.cpp.i
-.PHONY : 13-practice/part-4.i
+13-practice/part-5.i: 13-practice/part-5.cpp.i
+.PHONY : 13-practice/part-5.i
 
 # target to preprocess a source file
-13-practice/part-4.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-4.cpp.i
-.PHONY : 13-practice/part-4.cpp.i
+13-practice/part-5.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-5.cpp.i
+.PHONY : 13-practice/part-5.cpp.i
 
-13-practice/part-4.s: 13-practice/part-4.cpp.s
-.PHONY : 13-practice/part-4.s
+13-practice/part-5.s: 13-practice/part-5.cpp.s
+.PHONY : 13-practice/part-5.s
 
 # target to generate assembly for a file
-13-practice/part-4.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-4.cpp.s
-.PHONY : 13-practice/part-4.cpp.s
+13-practice/part-5.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-5.cpp.s
+.PHONY : 13-practice/part-5.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 13-practice/part-4.o"
-	@echo "... 13-practice/part-4.i"
-	@echo "... 13-practice/part-4.s"
+	@echo "... 13-practice/part-5.o"
+	@echo "... 13-practice/part-5.i"
+	@echo "... 13-practice/part-5.s"
 .PHONY : help
 
 
