@@ -85,7 +85,8 @@ void mat_multi(int A[2][2], int B[2][2]) {
 
 /**
  * 问题二：牛数量问题。
- * 一开始农场只有一头成熟的牛，第二年开始，该牛每年生产一头母牛。每只母牛需要三年成熟，成熟也可以生产牛。问第 n 年后农场有多少头牛。
+ * 一开始农场只有一头成熟的牛，第二年开始，该牛每年生产一头母牛。每只母牛需要三年成熟，成熟也可以生产牛。
+ * 问第 n 年后农场有多少头牛。
  *
  * 本题仍然是递归。f(n) = f(n-1) + f1(n-3)。
  * 第 n 年结束时的牛数量，等于去年的牛数量加上今年生产的牛的数量。今年能生产多少牛呢？三年前有多少头牛就能生产多少牛。
@@ -342,16 +343,19 @@ Job *new_job(int h, int m) {
 struct Cmp {
     bool operator()(const Job *j1, const Job *j2) {
         if (j2->hard != j1->hard) {
-            /// 难度升序
+            /// 按难度升序
             return j2->hard > j1->hard;
         }
-        /// 报酬降序
+        /// 难度相同时按报酬降序
         return j2->money < j1->money;
     }
 };
 
 /**
- * 从 vec 中删除这些不用的元素相对困难（C++不提供 TreeMap）。此处的解决办法是：将可用的元素加入 map 中。
+ * 从 vec 中删除这些不用的元素相对困难（C++ 不提供 TreeMap）。此处的解决办法是：将可用的元素加入 map 中。
+ *
+ * TODO：C++ 用 ordered_map （就是 map）来实现有序表。基于 ordered_map 实现本方法时，我们需要自定义比较函数。
+ *     将这些 job 直接添加到 map 中，实现自定义比较函数以及删除等操作。
  * */
 int *working(vector<Job *> &jobs, const int *abilities, int worker_num) {
     sort(jobs.begin(), jobs.end(), Cmp());
@@ -389,21 +393,21 @@ int *working(vector<Job *> &jobs, const int *abilities, int worker_num) {
 // --------------------------------------------------------------------------------------------------------------
 
 int main() {
-//    for (int i = 1; i <= 10; i++) {
-//        cout << fibonacci(i) << " ";
-//    }
+    for (int i = 1; i <= 10; i++) {
+        cout << fibonacci(i) << " ";
+    }
 
-//    cout << str_num(4) << " " << str_num_dp(4) << endl;
+    cout << str_num(4) << " " << str_num_dp(4) << endl;
 
-//    cout << impossible_triangle(13) << endl;
+    cout << impossible_triangle(13) << endl;
 
-//    int arr[] = {1, 2, 3, 5, 7, 9};
-//    for (int w = 5; w <= 17; w++) {
-//        cout << packing(arr, 6, w) << " ";
-//        cout << packing_dp(arr, 6, w) << " ";
-//        cout << packing2(arr, 6, w) << " ";
-//        cout << packing2_dp(arr, 6, w) << endl;
-//    }
+    int arr[] = {1, 2, 3, 5, 7, 9};
+    for (int w = 5; w <= 17; w++) {
+        cout << packing(arr, 6, w) << " ";
+        cout << packing_dp(arr, 6, w) << " ";
+        cout << packing2(arr, 6, w) << " ";
+        cout << packing2_dp(arr, 6, w) << endl;
+    }
 
     vector<Job *> jobs;
     jobs.push_back(new_job(3, 5));
