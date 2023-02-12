@@ -34,15 +34,15 @@ void binary_search(const int *arr, int size, int target) {
         return;
     }
     bool found = false;
-    int begin = 0; int end = size - 1;
-    while (begin < end) {
-        int medium = (begin + end) / 2;
-        if (arr[medium] > target) {
-            end = medium;
-        } else if (arr[medium] < target) {
-            begin = medium;
+    int l = 0; int r = size - 1;
+    while (l <= r) {
+        int m = (l + r) / 2;
+        if (arr[m] > target) {
+            r = m - 1;
+        } else if (arr[m] < target) {
+            l = m + 1;
         } else {
-            cout << medium << endl;
+            cout << m << endl;
             found = true;
             break;
         }
@@ -57,24 +57,26 @@ void binary_search(const int *arr, int size, int target) {
  * */
 void binary_search_geq(const int *arr, int size, int target) {
     if (arr == nullptr) {
-        ::exit(1);
+        return;
     }
-    int begin = 0, end = size - 1;
+    int l = 0, r = size - 1;
     while (true) {
-        if (begin == end || begin + 1 == end) {
+        if (l == r || l + 1 == r) {
             break;
         }
-        int medium = (begin + end) / 2;
-        if (arr[medium] >= target) {
-            end = medium;
+        int m = (l + r) / 2;
+        if (arr[m] >= target) {
+            r = m;
         } else {
-            begin = medium;
+            l = m;
         }
     }
-    if (arr[begin] >= target) {
-        cout << begin << endl;
+    if (arr[r] < target) {
+        cout << -1 << endl;
+    } else if (arr[l] >= target) {
+        cout << l << endl;
     } else {
-        cout << end << endl;
+        cout << r << endl;
     }
 }
 
@@ -112,6 +114,8 @@ void binary_search_leq(const int *arr, int size, int target) {
  * 任意一个元素，若它比左右两边相邻的数都小，则它是一个局部最小。
  * 本题难点在于 "罗尔定理"。这意味着，使用二分查找时，只要端点不满足，则两个子段中必然有一个子段内存在局部最小。
  * 要判断在哪个子段继续二分查找。
+ *
+ * 局部极小一定存在。
  * */
 void find_local_min(const int *arr, int size) {
     if (arr == nullptr) {
@@ -149,15 +153,15 @@ void find_local_min(const int *arr, int size) {
 }
 
 int main() {
-    int arr1[8] = {1, 2, 4, 6, 7, 9, 10, 23};
-    basic_find_num(arr1, 8, 2);
-    binary_search(arr1, 8, 2);
+//    int arr1[] = {1, 2, 4, 6, 7, 9, 10, 23, 24};
+//    basic_find_num(arr1, 8, 2);
+//    binary_search(arr1, 9, 6);
 
     int arr2[21] = {1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4,
                     4, 4, 4, 4, 4, 4, 5, 5, 5, 5};
-    binary_search_geq(arr2, 21, 4);
-    binary_search_leq(arr2, 21, 4);
-
-    int arr3[] = {9, 6, 3, 2, 1, -4, 5, 6, 7};
-    find_local_min(arr3, 9);
+    binary_search_geq(arr2, 21, -12);
+//    binary_search_leq(arr2, 21, 4);
+//
+//    int arr3[] = {9, 6, 3, 2, 1, -4, 5, 6, 7};
+//    find_local_min(arr3, 9);
 }

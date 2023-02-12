@@ -315,53 +315,162 @@ void solve2(Node *root) {
 
 // --------------------------------------------------------------------------------------------------------------
 
-int main() {
-    cout << convert("-2147483648") << endl;
-    cout << convert("-0") << endl;
-    cout << convert("-123asd") << endl;
-    cout << convert("2147483648") << endl;
-
-    vector<string> res = split("\\a\\\\\\b\\", "\\");
-    for (auto &v: res) {
-        cout << v << endl;
+/**
+ * 题目五：给定一个数组，计算所有连续子数组中的最大的累加和。
+ *
+ * 解法一：双重遍历
+ * */
+int max_sum(const int *arr, int size) {
+    int res[size];
+    for (int i = 0; i < size; i++) {
+        /// 计算以 i 为头的子数组的最大累加和
+        int cur_max = arr[i], cur_sum = arr[i];
+        for (int j = i + 1; j < size; j++) {
+            cur_sum += arr[j];
+            cur_max = cur_sum > cur_max ? cur_sum : cur_max;
+        }
+        res[i] = cur_max;
     }
+    int ans = res[0];
+    for (int i = 1; i < size; i++) {
+        ans = ans < res[i] ? res[i] : ans;
+    }
+    return ans;
+}
 
-    string s[] = {"b\\cst", "d\\", "a\\d\\e", "a\\b\\c"};
-    solve(s, 4);
+/**
+ * 解法二：Kadane's algorithm（可以基于 DP 得到）
+ * 从左到右扫一遍，综合小于 0 时重置计数位置，每次取最大值。
+ *
+ *
+ * 如果数组中全是负数，则每次 cur 都是以 0 的姿态参与累加的，因此 res 返回的是最大的那个负数。
+ * 如果数组中有负数和零，上述理解仍然正确，0 不会对累加和造成影响。
+ * 如果数组中有正数、负数和零，则不妨设 [i...j] 是累加和最大的子序列中最长的那个。
+ * 则必然有
+ *
+ * [...i.........j....]
+ *   k      p
+ * i <= p <= j 时，[i...p] 的累加和必然 >= 0；否则 [i...j] 应当变为 [p+1...j]；
+ * 0 <= k <= i 时，[k...i] 的累加和必然 < 0；否则 [i...j] 应当变为 [k...j]；
+ *
+ * 为了让 res 只计算 [i...j] 的累加和，我们需要让进入 i 的时候 cur = 0。
+ * */
+int Kadane(const int *arr, int size) {
+    int cur = 0, res = INT_MIN;
+    for (int i = 0; i < size; i++) {
+        cur += arr[i];
+        res = max(res, cur);
+        if (cur < 0) {
+            cur = 0;
+        }
+    }
+    return res;
+}
 
-    Node *root1 = new_node(3);
-    root1->left = new_node(1);
-    root1->left->left = new_node(0);
-    root1->left->right = new_node(2);
-    root1->right = new_node(5);
-    root1->right->left = new_node(4);
-    root1->right->right = new_node(9);
-    root1->right->right->right = new_node(11);
-    auto *head = bst2list(root1);
-    traverse(head);
+// --------------------------------------------------------------------------------------------------------------
 
-    Node *root2 = new_node(12);
-    root2->left = new_node(9);
-    root2->left->left = new_node(7);
-    root2->left->right = new_node(10);
-    root2->left->left->left = new_node(4);
-    root2->left->left->right = new_node(11);
-    root2->right = new_node(18);
-    root2->right->left = new_node(17);
-    root2->right->right = new_node(20);
-    root2->right->left->left = new_node(14);
-    root2->right->left->right = new_node(19);
-    solve2(root2);
+/**
+ * 题目六：给定一个矩阵，计算所有子矩阵中的最大的累加和。
+ * */
+int max_sub_mat(int **mat, int h, int w) {
+    if (mat == nullptr || h == 0 || w == 0) {
+        return 0;
+    }
+    int res = INT_MIN;
+    int cur;
+    int *tmp;
+//    ::memset(tmp, 0, sizeof(int) * w);
+    for (int i = 0; i < h; i++) {
+        tmp = new int[w]{};
+        for (int j = i; j < h; j++) {
+            /// 分析第 i 到第 j 行的累加和
+            cur = 0;
+            for (int k = 0; k < w; k++) {
+                /// 把第 i 到第 j 行每一列的位置上的元素累加起来
+                tmp[k] += mat[j][k];
+                cur += tmp[k];
+                res = max(res, cur);
+                cur = cur < 0 ? 0 : cur;
+            }
+        }
+    }
+    return res;
+}
 
-    Node *root3 = new_node(12);
-    root3->left = new_node(9);
-    root3->right = new_node(18);
-    root3->left->right = new_node(13);
-    root3->right->left = new_node(17);
-    root3->right->right = new_node(23);
-    root3->right->right->left = new_node(19);
-    root3->right->right->right = new_node(25);
-    solve2(root3);
+// --------------------------------------------------------------------------------------------------------------
+
+int main() {
+//    cout << convert("-2147483648") << endl;
+//    cout << convert("-0") << endl;
+//    cout << convert("-123asd") << endl;
+//    cout << convert("2147483648") << endl;
+//
+//    vector<string> res = split("\\a\\\\\\b\\", "\\");
+//    for (auto &v: res) {
+//        cout << v << endl;
+//    }
+//
+//    string s[] = {"b\\cst", "d\\", "a\\d\\e", "a\\b\\c"};
+//    solve(s, 4);
+//
+//    Node *root1 = new_node(3);
+//    root1->left = new_node(1);
+//    root1->left->left = new_node(0);
+//    root1->left->right = new_node(2);
+//    root1->right = new_node(5);
+//    root1->right->left = new_node(4);
+//    root1->right->right = new_node(9);
+//    root1->right->right->right = new_node(11);
+//    auto *head = bst2list(root1);
+//    traverse(head);
+//
+//    Node *root2 = new_node(12);
+//    root2->left = new_node(9);
+//    root2->left->left = new_node(7);
+//    root2->left->right = new_node(10);
+//    root2->left->left->left = new_node(4);
+//    root2->left->left->right = new_node(11);
+//    root2->right = new_node(18);
+//    root2->right->left = new_node(17);
+//    root2->right->right = new_node(20);
+//    root2->right->left->left = new_node(14);
+//    root2->right->left->right = new_node(19);
+//    solve2(root2);
+//
+//    Node *root3 = new_node(12);
+//    root3->left = new_node(9);
+//    root3->right = new_node(18);
+//    root3->left->right = new_node(13);
+//    root3->right->left = new_node(17);
+//    root3->right->right = new_node(23);
+//    root3->right->right->left = new_node(19);
+//    root3->right->right->right = new_node(25);
+//    solve2(root3);
+
+    int arr[] = {1, 1, -1, -10, 11, 4, -6, 9, 20, -10, -2};
+    cout << max_sum(arr, 11) << endl;
+
+    int arr2[] = {3, 2, -1, 4, -9, 4, -2, 3, 4, -2, 6};
+    cout << max_sum(arr2, 11) << endl;
+    cout << Kadane(arr2, 11) << endl;
+
+    int **mat = new int *[3];
+    for (int i = 0; i < 3; i++) {
+        mat[i] = new int[4];
+    }
+    mat[0][0] = -5;
+    mat[0][1] = 3;
+    mat[0][2] = 6;
+    mat[0][3] = 4;
+    mat[1][0] = -7;
+    mat[1][1] = 9;
+    mat[1][2] = -5;
+    mat[1][3] = 3;
+    mat[2][0] = -10;
+    mat[2][1] = 1;
+    mat[2][2] = -200;
+    mat[2][3] = 5;
+    cout << max_sub_mat(mat, 3, 4) << endl;
 
     return 0;
 }
