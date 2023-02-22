@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-1-complexity-and-sort/2-binary-search.o: 1-complexity-and-sort/2-binary-search.cpp.o
-.PHONY : 1-complexity-and-sort/2-binary-search.o
+13-practice/part-8.o: 13-practice/part-8.cpp.o
+.PHONY : 13-practice/part-8.o
 
 # target to build an object file
-1-complexity-and-sort/2-binary-search.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/2-binary-search.cpp.o
-.PHONY : 1-complexity-and-sort/2-binary-search.cpp.o
+13-practice/part-8.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-8.cpp.o
+.PHONY : 13-practice/part-8.cpp.o
 
-1-complexity-and-sort/2-binary-search.i: 1-complexity-and-sort/2-binary-search.cpp.i
-.PHONY : 1-complexity-and-sort/2-binary-search.i
+13-practice/part-8.i: 13-practice/part-8.cpp.i
+.PHONY : 13-practice/part-8.i
 
 # target to preprocess a source file
-1-complexity-and-sort/2-binary-search.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/2-binary-search.cpp.i
-.PHONY : 1-complexity-and-sort/2-binary-search.cpp.i
+13-practice/part-8.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-8.cpp.i
+.PHONY : 13-practice/part-8.cpp.i
 
-1-complexity-and-sort/2-binary-search.s: 1-complexity-and-sort/2-binary-search.cpp.s
-.PHONY : 1-complexity-and-sort/2-binary-search.s
+13-practice/part-8.s: 13-practice/part-8.cpp.s
+.PHONY : 13-practice/part-8.s
 
 # target to generate assembly for a file
-1-complexity-and-sort/2-binary-search.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/1-complexity-and-sort/2-binary-search.cpp.s
-.PHONY : 1-complexity-and-sort/2-binary-search.cpp.s
+13-practice/part-8.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-8.cpp.s
+.PHONY : 13-practice/part-8.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 1-complexity-and-sort/2-binary-search.o"
-	@echo "... 1-complexity-and-sort/2-binary-search.i"
-	@echo "... 1-complexity-and-sort/2-binary-search.s"
+	@echo "... 13-practice/part-8.o"
+	@echo "... 13-practice/part-8.i"
+	@echo "... 13-practice/part-8.s"
 .PHONY : help
 
 

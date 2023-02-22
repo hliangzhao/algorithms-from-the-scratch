@@ -340,7 +340,7 @@ int max_sum(const int *arr, int size) {
 
 /**
  * 解法二：Kadane's algorithm（可以基于 DP 得到）
- * 从左到右扫一遍，综合小于 0 时重置计数位置，每次取最大值。
+ * 从左到右扫一遍，总和小于 0 时重置计数位置，每次取最大值。
  *
  *
  * 如果数组中全是负数，则每次 cur 都是以 0 的姿态参与累加的，因此 res 返回的是最大的那个负数。
@@ -400,52 +400,52 @@ int max_sub_mat(int **mat, int h, int w) {
 // --------------------------------------------------------------------------------------------------------------
 
 int main() {
-//    cout << convert("-2147483648") << endl;
-//    cout << convert("-0") << endl;
-//    cout << convert("-123asd") << endl;
-//    cout << convert("2147483648") << endl;
-//
-//    vector<string> res = split("\\a\\\\\\b\\", "\\");
-//    for (auto &v: res) {
-//        cout << v << endl;
-//    }
-//
-//    string s[] = {"b\\cst", "d\\", "a\\d\\e", "a\\b\\c"};
-//    solve(s, 4);
-//
-//    Node *root1 = new_node(3);
-//    root1->left = new_node(1);
-//    root1->left->left = new_node(0);
-//    root1->left->right = new_node(2);
-//    root1->right = new_node(5);
-//    root1->right->left = new_node(4);
-//    root1->right->right = new_node(9);
-//    root1->right->right->right = new_node(11);
-//    auto *head = bst2list(root1);
-//    traverse(head);
-//
-//    Node *root2 = new_node(12);
-//    root2->left = new_node(9);
-//    root2->left->left = new_node(7);
-//    root2->left->right = new_node(10);
-//    root2->left->left->left = new_node(4);
-//    root2->left->left->right = new_node(11);
-//    root2->right = new_node(18);
-//    root2->right->left = new_node(17);
-//    root2->right->right = new_node(20);
-//    root2->right->left->left = new_node(14);
-//    root2->right->left->right = new_node(19);
-//    solve2(root2);
-//
-//    Node *root3 = new_node(12);
-//    root3->left = new_node(9);
-//    root3->right = new_node(18);
-//    root3->left->right = new_node(13);
-//    root3->right->left = new_node(17);
-//    root3->right->right = new_node(23);
-//    root3->right->right->left = new_node(19);
-//    root3->right->right->right = new_node(25);
-//    solve2(root3);
+    cout << convert("-2147483648") << endl;
+    cout << convert("-0") << endl;
+    cout << convert("-123asd") << endl;
+    cout << convert("2147483648") << endl;
+
+    vector<string> res = split("\\a\\\\\\b\\", "\\");
+    for (auto &v: res) {
+        cout << v << endl;
+    }
+
+    string s[] = {"b\\cst", "d\\", "a\\d\\e", "a\\b\\c"};
+    solve(s, 4);
+
+    Node *root1 = new_node(3);
+    root1->left = new_node(1);
+    root1->left->left = new_node(0);
+    root1->left->right = new_node(2);
+    root1->right = new_node(5);
+    root1->right->left = new_node(4);
+    root1->right->right = new_node(9);
+    root1->right->right->right = new_node(11);
+    auto *head = bst2list(root1);
+    traverse(head);
+
+    Node *root2 = new_node(12);
+    root2->left = new_node(9);
+    root2->left->left = new_node(7);
+    root2->left->right = new_node(10);
+    root2->left->left->left = new_node(4);
+    root2->left->left->right = new_node(11);
+    root2->right = new_node(18);
+    root2->right->left = new_node(17);
+    root2->right->right = new_node(20);
+    root2->right->left->left = new_node(14);
+    root2->right->left->right = new_node(19);
+    solve2(root2);
+
+    Node *root3 = new_node(12);
+    root3->left = new_node(9);
+    root3->right = new_node(18);
+    root3->left->right = new_node(13);
+    root3->right->left = new_node(17);
+    root3->right->right = new_node(23);
+    root3->right->right->left = new_node(19);
+    root3->right->right->right = new_node(25);
+    solve2(root3);
 
     int arr[] = {1, 1, -1, -10, 11, 4, -6, 9, 20, -10, -2};
     cout << max_sum(arr, 11) << endl;
@@ -471,6 +471,9 @@ int main() {
     mat[2][2] = -200;
     mat[2][3] = 5;
     cout << max_sub_mat(mat, 3, 4) << endl;
+
+    vector<int> vec = {arr2, arr2 + 10};
+    cout << *(--vec.end()) << endl;
 
     return 0;
 }
