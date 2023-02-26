@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-8.cpp.o"
-  "CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-8.cpp.o.d"
+  "CMakeFiles/algorithms_from_the_scratch.dir/0-cpp-essential/3-use-stl.cpp.o"
+  "CMakeFiles/algorithms_from_the_scratch.dir/0-cpp-essential/3-use-stl.cpp.o.d"
   "algorithms_from_the_scratch"
   "algorithms_from_the_scratch.pdb"
 )

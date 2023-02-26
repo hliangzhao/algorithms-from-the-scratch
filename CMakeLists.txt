@@ -3,4 +3,4 @@ project(algorithms_from_the_scratch)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(algorithms_from_the_scratch 13-practice/part-8.cpp)
+add_executable(algorithms_from_the_scratch 0-cpp-essential/3-use-stl.cpp)

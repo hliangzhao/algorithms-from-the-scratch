@@ -129,29 +129,29 @@ algorithms_from_the_scratch/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/build
 .PHONY : algorithms_from_the_scratch/fast
 
-13-practice/part-8.o: 13-practice/part-8.cpp.o
-.PHONY : 13-practice/part-8.o
+0-cpp-essential/3-use-stl.o: 0-cpp-essential/3-use-stl.cpp.o
+.PHONY : 0-cpp-essential/3-use-stl.o
 
 # target to build an object file
-13-practice/part-8.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-8.cpp.o
-.PHONY : 13-practice/part-8.cpp.o
+0-cpp-essential/3-use-stl.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/0-cpp-essential/3-use-stl.cpp.o
+.PHONY : 0-cpp-essential/3-use-stl.cpp.o
 
-13-practice/part-8.i: 13-practice/part-8.cpp.i
-.PHONY : 13-practice/part-8.i
+0-cpp-essential/3-use-stl.i: 0-cpp-essential/3-use-stl.cpp.i
+.PHONY : 0-cpp-essential/3-use-stl.i
 
 # target to preprocess a source file
-13-practice/part-8.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-8.cpp.i
-.PHONY : 13-practice/part-8.cpp.i
+0-cpp-essential/3-use-stl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/0-cpp-essential/3-use-stl.cpp.i
+.PHONY : 0-cpp-essential/3-use-stl.cpp.i
 
-13-practice/part-8.s: 13-practice/part-8.cpp.s
-.PHONY : 13-practice/part-8.s
+0-cpp-essential/3-use-stl.s: 0-cpp-essential/3-use-stl.cpp.s
+.PHONY : 0-cpp-essential/3-use-stl.s
 
 # target to generate assembly for a file
-13-practice/part-8.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/13-practice/part-8.cpp.s
-.PHONY : 13-practice/part-8.cpp.s
+0-cpp-essential/3-use-stl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/algorithms_from_the_scratch.dir/build.make CMakeFiles/algorithms_from_the_scratch.dir/0-cpp-essential/3-use-stl.cpp.s
+.PHONY : 0-cpp-essential/3-use-stl.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... algorithms_from_the_scratch"
-	@echo "... 13-practice/part-8.o"
-	@echo "... 13-practice/part-8.i"
-	@echo "... 13-practice/part-8.s"
+	@echo "... 0-cpp-essential/3-use-stl.o"
+	@echo "... 0-cpp-essential/3-use-stl.i"
+	@echo "... 0-cpp-essential/3-use-stl.s"
 .PHONY : help
 
 
